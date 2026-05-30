@@ -1,0 +1,30 @@
+{
+  "name": "elysia-learning",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:basic": "npx tsx watch src/basic/01-hello.ts",
+    "dev:example1": "npx tsx watch src/basic/02-http-methods.ts",
+    "dev:example2": "npx tsx watch src/intermediate/03-validation.ts",
+    "dev:example3": "npx tsx watch src/intermediate/04-middleware.ts",
+    "dev:example4": "npx tsx watch src/intermediate/05-file-upload.ts",
+    "dev:example5": "npx tsx watch src/advanced/05-blog-api.ts",
+    "dev:example6": "npx tsx watch src/advanced/06-auth.ts",
+    "dev:example7": "npx tsx watch src/advanced/07-websocket.ts",
+    "start": "npx tsx src/basic/01-hello.ts",
+    "install:bun": "echo 'Installing with Bun...' && bun install",
+    "install:npm": "echo 'Installing with npm...' && npm install"
+  },
+  "dependencies": {
+    "elysia": "^1.1.23",
+    "@elysiajs/cors": "^1.1.1",
+    "@elysiajs/jwt": "^1.1.1",
+    "@elysiajs/static": "^1.1.1",
+    "@elysiajs/swagger": "^1.1.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.3",
+    "typescript": "^5.7.3",
+    "tsx": "^4.19.3"
+  }
+}

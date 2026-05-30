@@ -1,0 +1,794 @@
+{
+  "info": {
+    "name": "Elysia Learning API",
+    "description": "Elysia 循序渐进学习项目的 API 测试集合",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Level 1 - 基础入门",
+      "item": [
+        {
+          "name": "01 - Hello Elysia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            },
+            "description": "测试基础路由"
+          }
+        },
+        {
+          "name": "02 - 路径参数",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/hello/Elysia",
+              "host": ["{{baseUrl}}"],
+              "path": ["hello", "Elysia"]
+            },
+            "description": "测试路径参数"
+          }
+        },
+        {
+          "name": "03 - 查询参数",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/query?name=张三&age=25",
+              "host": ["{{baseUrl}}"],
+              "path": ["query"],
+              "query": [
+                {"key": "name", "value": "张三"},
+                {"key": "age", "value": "25"}
+              ]
+            },
+            "description": "测试查询参数"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Level 1 - TODO CRUD",
+      "item": [
+        {
+          "name": "01 - 获取所有待办",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/todos",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["todos"]
+            }
+          }
+        },
+        {
+          "name": "02 - 获取单个待办",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/todos/1",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["todos", "1"]
+            }
+          }
+        },
+        {
+          "name": "03 - 创建待办",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"学习 Elysia 框架\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/todos",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["todos"]
+            }
+          }
+        },
+        {
+          "name": "04 - 更新待办",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"精通 Elysia 框架\",\n  \"completed\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/todos/1",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["todos", "1"]
+            }
+          }
+        },
+        {
+          "name": "05 - 标记完成状态",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/todos/1/complete",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["todos", "1", "complete"]
+            }
+          }
+        },
+        {
+          "name": "06 - 删除待办",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/todos/1",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["todos", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Level 2 - 请求验证",
+      "item": [
+        {
+          "name": "01 - 用户注册",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"zhangsan\",\n  \"email\": \"zhangsan@example.com\",\n  \"password\": \"123456\",\n  \"age\": 25\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3002/register",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["register"]
+            }
+          }
+        },
+        {
+          "name": "02 - 产品搜索",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3002/products?keyword=手机&page=1&limit=10&sort=price",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["products"],
+              "query": [
+                {"key": "keyword", "value": "手机"},
+                {"key": "page", "value": "1"},
+                {"key": "limit", "value": "10"},
+                {"key": "sort", "value": "price"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "03 - 获取文章",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3002/articles/1",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["articles", "1"]
+            }
+          }
+        },
+        {
+          "name": "04 - 创建商品",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"iPhone 15 Pro\",\n  \"price\": 7999,\n  \"stock\": 100,\n  \"category\": \"electronics\",\n  \"tags\": [\"apple\", \"smartphone\"],\n  \"description\": \"最新款 iPhone\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3002/products",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["products"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Level 2 - 中间件",
+      "item": [
+        {
+          "name": "01 - 公开接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/public",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["public"]
+            }
+          }
+        },
+        {
+          "name": "02 - 用户登录",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3003/login",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["login"]
+            }
+          }
+        },
+        {
+          "name": "03 - 获取个人信息",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer token123"}
+            ],
+            "url": {
+              "raw": "http://localhost:3003/api/profile",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "profile"]
+            }
+          }
+        },
+        {
+          "name": "04 - 管理员接口",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer admin456"}
+            ],
+            "url": {
+              "raw": "http://localhost:3003/api/admin",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "admin"]
+            }
+          }
+        },
+        {
+          "name": "05 - 用户列表",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer token123"}
+            ],
+            "url": {
+              "raw": "http://localhost:3003/api/users",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "users"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Level 2 - 文件上传",
+      "item": [
+        {
+          "name": "01 - 查看上传配置",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/upload/config",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["upload", "config"]
+            },
+            "description": "查看允许的文件类型、大小限制等配置"
+          }
+        },
+        {
+          "name": "02 - 单张图片上传",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "multipart/form-data"}
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3007/upload",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["upload"]
+            },
+            "description": "上传单张图片 (支持 jpeg, png, gif, webp)"
+          }
+        },
+        {
+          "name": "03 - 批量图片上传",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "multipart/form-data"}
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "images",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3007/upload/batch",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["upload", "batch"]
+            },
+            "description": "批量上传多张图片 (最多 10 张)"
+          }
+        },
+        {
+          "name": "04 - 获取文件列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/files?page=1&limit=20",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["files"],
+              "query": [
+                {"key": "page", "value": "1"},
+                {"key": "limit", "value": "20"}
+              ]
+            },
+            "description": "获取已上传的文件列表 (支持分页)"
+          }
+        },
+        {
+          "name": "05 - 获取文件详情",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/files/img_123456_1",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["files", "img_123456_1"]
+            },
+            "description": "获取指定文件的详细信息"
+          }
+        },
+        {
+          "name": "06 - 删除单个文件",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/files/img_123456_1",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["files", "img_123456_1"]
+            },
+            "description": "删除指定的文件"
+          }
+        },
+        {
+          "name": "07 - 批量删除文件",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\"img_123456_1\", \"img_123456_2\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3007/files/batch-delete",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["files", "batch-delete"]
+            },
+            "description": "批量删除多个文件"
+          }
+        },
+        {
+          "name": "08 - 获取上传统计",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/stats",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["stats"]
+            },
+            "description": "获取文件上传统计信息"
+          }
+        },
+        {
+          "name": "09 - 获取文件列表 (按类型筛选)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/files?type=png&page=1&limit=10",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["files"],
+              "query": [
+                {"key": "type", "value": "png"},
+                {"key": "page", "value": "1"},
+                {"key": "limit", "value": "10"}
+              ]
+            },
+            "description": "按图片类型筛选文件列表"
+          }
+        },
+        {
+          "name": "10 - 健康检查",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3007/health",
+              "host": ["localhost"],
+              "port": "3007",
+              "path": ["health"]
+            },
+            "description": "服务健康检查"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Level 3 - 博客 API",
+      "item": [
+        {
+          "name": "01 - 获取所有作者",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3004/authors",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["authors"]
+            }
+          }
+        },
+        {
+          "name": "02 - 获取作者详情",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3004/authors/1",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["authors", "1"]
+            }
+          }
+        },
+        {
+          "name": "03 - 创建作者",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"王五\",\n  \"email\": \"wangwu@example.com\",\n  \"avatar\": \"https://example.com/avatar3.jpg\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3004/authors",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["authors"]
+            }
+          }
+        },
+        {
+          "name": "04 - 获取文章列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3004/posts?page=1&limit=10",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["posts"],
+              "query": [
+                {"key": "page", "value": "1"},
+                {"key": "limit", "value": "10"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "05 - 获取文章详情",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3004/posts/1",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["posts", "1"]
+            }
+          }
+        },
+        {
+          "name": "06 - 创建文章",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Elysia 高级教程\",\n  \"content\": \"本文介绍 Elysia 的高级用法...\",\n  \"authorId\": 1,\n  \"tags\": [\"elysia\", \"advanced\"],\n  \"status\": \"published\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3004/posts",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["posts"]
+            }
+          }
+        },
+        {
+          "name": "07 - 获取评论列表",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3004/posts/1/comments",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["posts", "1", "comments"]
+            }
+          }
+        },
+        {
+          "name": "08 - 添加评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"author\": \"读者 A\",\n  \"content\": \"写得很好，感谢分享！\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3004/posts/1/comments",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["posts", "1", "comments"]
+            }
+          }
+        },
+        {
+          "name": "09 - 获取统计数据",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3004/stats",
+              "host": ["localhost"],
+              "port": "3004",
+              "path": ["stats"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Level 3 - JWT 认证",
+      "item": [
+        {
+          "name": "01 - 用户注册",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3005/auth/register",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "02 - 用户登录",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3005/auth/login",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "03 - 获取当前用户",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{token}}"}
+            ],
+            "url": {
+              "raw": "http://localhost:3005/auth/me",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "04 - 刷新 Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"<your-refresh-token>\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3005/auth/refresh",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["auth", "refresh"]
+            }
+          }
+        },
+        {
+          "name": "05 - 更新个人信息",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{token}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"newemail@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3005/auth/me",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "06 - 修改密码",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{token}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"oldPassword\": \"123456\",\n  \"newPassword\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3005/auth/change-password",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["auth", "change-password"]
+            }
+          }
+        },
+        {
+          "name": "07 - 管理员 - 用户列表",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer admin456"}
+            ],
+            "url": {
+              "raw": "http://localhost:3005/admin/users",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["admin", "users"]
+            }
+          }
+        },
+        {
+          "name": "08 - 健康检查",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/health",
+              "host": ["localhost"],
+              "port": "3005",
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
