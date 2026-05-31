@@ -1,0 +1,78 @@
+// Prisma Schema - 博客系统
+// 复制命令：cp prisma/schema-blog.prisma prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// 作者模型
+model Author {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  posts    Post[]
+  comments Comment[]
+  
+  @@map("authors")
+}
+
+// 文章模型
+model Post {
+  id        Int       @id @default(autoincrement())
+  title     String    @db.VarChar(200)
+  content   String
+  published Boolean   @default(false)
+  viewCount Int       @default(0)
+  authorId  Int
+  author    Author    @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  tags      PostTag[]
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  @@index([authorId])
+  @@index([published])
+  @@map("posts")
+}
+
+// 评论模型
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId  Int
+  author    Author   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  
+  @@index([postId])
+  @@index([authorId])
+  @@map("comments")
+}
+
+// 标签模型
+model Tag {
+  id     Int       @id @default(autoincrement())
+  name   String    @unique
+  posts  PostTag[]
+  
+  @@map("tags")
+}
+
+// 文章标签关联表（多对多）
+model PostTag {
+  postId  Int
+  tagId   Int
+  post    Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag     Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  
+  @@id([postId, tagId])
+  @@index([postId])
+  @@index([tagId])
+  @@map("post_tags")
+}
