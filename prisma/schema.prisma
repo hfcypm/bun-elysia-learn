@@ -1,0 +1,98 @@
+// Prisma Schema 定义
+// 复制到 prisma/schema.prisma 文件
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"  // 或 postgresql
+  url      = env("DATABASE_URL")
+}
+
+/// 用户模型
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique @db.VarChar(50)
+  email     String   @unique @db.VarChar(100)
+  password  String   @db.VarChar(255)
+  role      String   @default("user") @db.VarChar(20)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  posts    Post[]
+  comments Comment[]
+
+  @@index([username])
+  @@index([email])
+  @@map("users")
+}
+
+/// 文章模型
+model Post {
+  id         Int      @id @default(autoincrement())
+  title      String   @db.VarChar(200)
+  content    String
+  authorId   Int
+  status     String   @default("draft") @db.VarChar(20)
+  viewCount  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // 关联
+  author   User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  tags     PostTag[]
+  comments Comment[]
+
+  @@index([authorId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("posts")
+}
+
+/// 标签模型
+model Tag {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique @db.VarChar(50)
+  color     String   @default("#666666") @db.VarChar(7)
+  createdAt DateTime @default(now())
+
+  // 关联
+  posts PostTag[]
+
+  @@map("tags")
+}
+
+/// 文章标签关联模型 (多对多)
+model PostTag {
+  postId Int
+  tagId  Int
+  createdAt DateTime @default(now())
+
+  // 关联
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([postId])
+  @@index([tagId])
+  @@map("post_tags")
+}
+
+/// 评论模型
+model Comment {
+  id        Int      @id @default(autoincrement())
+  postId    Int
+  authorId  Int
+  content   String
+  createdAt DateTime @default(now())
+
+  // 关联
+  post   Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+  @@index([authorId])
+  @@map("comments")
+}
