@@ -11,7 +11,30 @@
     "dev:example5": "npx tsx watch src/advanced/05-blog-api.ts",
     "dev:example6": "npx tsx watch src/advanced/06-auth.ts",
     "dev:example7": "npx tsx watch src/advanced/07-websocket.ts",
+    "dev:bookmark": "npx tsx watch src/advanced/bookmark-system.ts",
+    "dev:prisma:user": "npx tsx watch examples/prisma-basic-user.ts",
+    "dev:prisma:blog": "npx tsx watch examples/prisma-blog.ts",
+    "dev:prisma:ecommerce": "npx tsx watch examples/prisma-ecommerce.ts",
     "start": "npx tsx src/basic/01-hello.ts",
+    "start:prod": "NODE_ENV=production bun run src/advanced/bookmark-system.ts",
+    
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    
+    "docker:build": "docker build -f src/deployment/Dockerfile -t elysia-app .",
+    "docker:run": "docker run -p 3000:3000 --name elysia-app elysia-app",
+    "docker:compose": "docker-compose -f src/deployment/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f src/deployment/docker-compose.yml down",
+    
+    "pm2:start": "pm2 start src/deployment/pm2.config.js",
+    "pm2:stop": "pm2 stop all",
+    "pm2:restart": "pm2 restart all",
+    "pm2:logs": "pm2 logs",
+    
+    "lint": "eslint src/**/*.ts",
+    "typecheck": "tsc --noEmit",
+    
     "install:bun": "echo 'Installing with Bun...' && bun install",
     "install:npm": "echo 'Installing with npm...' && npm install"
   },
