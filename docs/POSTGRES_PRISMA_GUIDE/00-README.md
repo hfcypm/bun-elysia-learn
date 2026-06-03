@@ -36,7 +36,7 @@
 - 数据库迁移
 - Prisma Studio 使用
 
-**[开始学习 →](01-GETTING_STARTED.md)**
+**[开始学习 →](./01-GETTING_STARTED.md)**
 
 ---
 
@@ -51,7 +51,7 @@
 - 删除操作（delete/deleteMany）
 - 聚合查询（aggregate/groupBy）
 
-**[开始学习 →](02-CRUD-BASICS.md)**
+**[开始学习 →](./02-CRUD-BASICS.md)**
 
 ---
 
@@ -65,7 +65,7 @@
 - 反向关联查询
 - 统计关联数量（_count）
 
-**[开始学习 →](03-RELATIONSHIP-ONE-TO-MANY.md)**
+**[开始学习 →](./03-RELATIONSHIP-ONE-TO-MANY.md)**
 
 **实战案例：**
 - [博客系统](../../examples/postgres-prisma/blog-system.ts) - 文章/分类/评论
@@ -82,7 +82,7 @@
 - 嵌套创建/更新
 - set/connect/disconnect
 
-**[开始学习 →](04-RELATIONSHIP-MANY-TO-MANY.md)**
+**[开始学习 →](./04-RELATIONSHIP-MANY-TO-MANY.md)**
 
 **实战案例：**
 - [博客标签](../../examples/postgres-prisma/blog-system.ts) - 文章标签管理
@@ -100,7 +100,7 @@
 - 错误处理与重试
 - 回滚与撤销
 
-**[开始学习 →](05-TRANSACTIONS-AND-LOCKS.md)**
+**[开始学习 →](./05-TRANSACTIONS-AND-LOCKS.md)**
 
 **实战案例：**
 - [电商订单](../../examples/postgres-prisma/ecommerce-order.ts) - 事务处理/库存扣减
@@ -117,7 +117,7 @@
 - 性能优化建议
 - 测试与部署
 
-**[开始学习 →](06-FINAL-PROJECT.md)**
+**[开始学习 →](./06-FINAL-PROJECT.md)**
 
 **项目包括：**
 - 用户认证系统
