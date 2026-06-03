@@ -1,0 +1,333 @@
+// PostgreSQL + Prisma 经典示例 Schema
+// 包含：用户认证、博客、电商、学生课程
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== 用户认证模型 ====================
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  avatar    String?
+  phone     String?
+  role      Role     @default(USER)
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  posts       Post[]
+  comments    Comment[]
+  cartItems   CartItem[]
+  orders      Order[]
+  enrollments Enrollment[]
+  likes       Like[]
+
+  @@index([email])
+  @@index([role])
+}
+
+enum Role {
+  USER
+  ADMIN
+  TEACHER
+  STUDENT
+}
+
+// ==================== 博客模型 ====================
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  slug      String   @unique
+  content   String
+  excerpt   String?
+  thumbnail String?
+  status    PostStatus @default(DRAFT)
+  views     Int      @default(0)
+  publishedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  authorId   Int
+  author     User      @relation(fields: [authorId], references: [id])
+  categoryId Int?
+  category   Category? @relation(fields: [categoryId], references: [id])
+  tags       PostTag[]
+  comments   Comment[]
+  likes      Like[]
+
+  @@index([authorId])
+  @@index([categoryId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Category {
+  id        Int      @id @default(autoincrement()]
+  name      String
+  slug      String   @unique
+  parentId  Int?
+  parent    Category? @relation("CategoryTree", fields: [parentId], references: [id])
+  children  Category[] @relation("CategoryTree")
+  posts     Post[]
+
+  @@index([parentId])
+}
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  posts PostTag[]
+}
+
+model PostTag {
+  postId Int
+  tagId  Int
+  post   Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  parentId  Int?
+  parent    Comment? @relation("CommentReplies", fields: [parentId], references: [id])
+  replies   Comment[] @relation("CommentReplies")
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  postId  Int
+  post    Post  @relation(fields: [postId], references: [id])
+  authorId Int
+  author  User  @relation(fields: [authorId], references: [id])
+
+  @@index([postId])
+  @@index([authorId])
+  @@index([parentId])
+}
+
+model Like {
+  id        Int      @id @default(autoincrement()]
+  createdAt DateTime @default(now())
+
+  // 关联
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+  postId Int?
+  post   Post? @relation(fields: [postId], references: [id])
+
+  @@unique([userId, postId])
+  @@index([postId])
+}
+
+// ==================== 电商模型 ====================
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  price       Decimal  @db.Decimal(10, 2)
+  stock       Int      @default(0)
+  thumbnail   String?
+  images      String[]
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 关联
+  categoryId Int
+  category   Category  @relation(fields: [categoryId], references: [id])
+  skus       ProductSKU[]
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  @@index([categoryId])
+  @@index([isActive])
+}
+
+model ProductSKU {
+  id            Int      @id @default(autoincrement()]
+  sku           String   @unique
+  size          String?
+  color         String?
+  stock         Int      @default(0)
+  priceModifier Decimal  @default(0) @db.Decimal(10, 2)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // 关联
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  cartItems CartItem[]
+  orderItems OrderItem[]
+
+  @@index([productId])
+}
+
+model CartItem {
+  id        Int      @id @default(autoincrement()]
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  userId    Int
+  user      User    @relation(fields: [userId], references: [id])
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  skuId     Int?
+  sku       ProductSKU? @relation(fields: [skuId], references: [id])
+
+  @@unique([userId, productId, skuId])
+  @@index([userId])
+}
+
+model Order {
+  id              Int         @id @default(autoincrement()]
+  orderNumber     String      @unique @default(uuid())
+  totalAmount     Decimal     @db.Decimal(10, 2)
+  status          OrderStatus @default(PENDING)
+  shippingAddress String
+  paymentMethod   String
+  paidAt          DateTime?
+  shippedAt       DateTime?
+  deliveredAt     DateTime?
+  cancelledAt     DateTime?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  // 关联
+  userId Int
+  user   User  @relation(fields: [userId], references: [id])
+  items  OrderItem[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model OrderItem {
+  id        Int      @id @default(autoincrement()]
+  quantity  Int
+  price     Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @default(now())
+
+  // 关联
+  orderId   Int
+  order     Order    @relation(fields: [orderId], references: [id])
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+  skuId     Int?
+  sku       ProductSKU? @relation(fields: [skuId], references: [id])
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+// ==================== 学生课程模型 ====================
+
+model Teacher {
+  id         Int       @id @default(autoincrement()]
+  name       String
+  title      String?
+  department String?
+  email      String?   @unique
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  // 关联
+  courses Course[]
+
+  @@index([department])
+}
+
+model Student {
+  id         Int       @id @default(autoincrement()]
+  name       String
+  studentId  String    @unique
+  grade      String
+  major      String
+  email      String?   @unique
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  // 关联
+  enrollments Enrollment[]
+
+  @@index([studentId])
+  @@index([grade])
+  @@index([major])
+}
+
+model Course {
+  id          Int      @id @default(autoincrement()]
+  name        String
+  code        String   @unique
+  description String?
+  credits     Int
+  semester    String
+  schedule    String?  // 上课时间
+  location    String?  // 上课地点
+  maxStudents Int      @default(30)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 关联
+  teacherId   Int
+  teacher     Teacher    @relation(fields: [teacherId], references: [id])
+  enrollments Enrollment[]
+
+  @@index([teacherId])
+  @@index([semester])
+  @@index([code])
+}
+
+model Enrollment {
+  id           Int       @id @default(autoincrement()]
+  regularScore Decimal?  @db.Decimal(5, 2)  // 平时成绩
+  examScore    Decimal?  @db.Decimal(5, 2)  // 期末成绩
+  totalScore   Decimal?  @db.Decimal(5, 2)  // 总成绩
+  enrolledAt   DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // 关联
+  studentId Int
+  student   Student @relation(fields: [studentId], references: [id])
+  courseId  Int
+  course    Course  @relation(fields: [courseId], references: [id])
+
+  @@unique([studentId, courseId])
+  @@index([studentId])
+  @@index([courseId])
+}
