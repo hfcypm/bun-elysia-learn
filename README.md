@@ -134,6 +134,14 @@ bun run src/basic/01-hello.ts
 
 - `src/security/01-helmet-security.ts` - Helmet 安全响应头
 
+### CORS 跨域专题 ⭐ 新增
+
+| 文件 | 说明 | 内容 |
+|------|------|------|
+| `examples/03-middleware/cors.ts` | **CORS 完整示例** | 340+ 行，生产级配置 |
+| `examples/03-middleware/cors-test-frontend.html` | **前端测试页面** | 图形化测试工具 |
+| `docs/CORS_GUIDE.md` | **CORS 完全指南** | 700+ 行，从入门到实战 |
+
 ---
 
 ## 📖 完整文档体系
@@ -243,6 +251,10 @@ npm run docker:compose   # Docker Compose 启动
 npm run pm2:start        # 启动应用
 npm run pm2:stop         # 停止应用
 npm run pm2:logs         # 查看日志
+
+# CORS 测试 ⭐ 新增
+bun run examples/03-middleware/cors.ts  # 启动 CORS 后端
+# 浏览器打开：examples/03-middleware/cors-test-frontend.html
 ```
 
 ---
@@ -285,15 +297,17 @@ bun-elysia-learn/
 │   ├── deployment/              # 部署专题 ⭐ (5 个)
 │   └── security/                # 安全专题 ⭐ (1 个)
 │
-├── 📦 examples/                  # 示例片段 (20+ 个)
-│   ├── 01-router/               # 路由示例
-│   ├── 02-validation/           # 验证示例
-│   ├── 03-middleware/           # 中间件示例
-│   ├── 04-response/             # 响应示例
-│   ├── 05-plugins/              # 插件示例
-│   ├── 06-hooks/                # Hooks 示例
-│   ├── 07-error-handling/       # 错误处理
-│   └── prisma-*.ts              # Prisma 示例 ⭐
+  ├── 📦 examples/                  # 示例片段 (25+ 个)
+  │   ├── 01-router/               # 路由示例
+  │   ├── 02-validation/           # 验证示例
+  │   ├── 03-middleware/           # 中间件示例 ⭐
+  │   │   ├── cors.ts              # CORS 完整示例 (340+ 行)
+  │   │   └── cors-test-frontend.html # 前端测试页面
+  │   ├── 04-response/             # 响应示例
+  │   ├── 05-plugins/              # 插件示例
+  │   ├── 06-hooks/                # Hooks 示例
+  │   ├── 07-error-handling/       # 错误处理
+  │   └── prisma-*.ts              # Prisma 示例 ⭐
 │
 ├── 🔧 deployment/                # 部署配置 ⭐
 │   ├── Dockerfile
@@ -321,7 +335,7 @@ bun-elysia-learn/
 | **语言** | TypeScript | v5.7+ |
 | **验证** | TypeBox | Latest |
 | **JWT** | @elysiajs/jwt | v1.1+ |
-| **CORS** | @elysiajs/cors | v1.1+ |
+| **CORS** | @elysiajs/cors | v1.1+ ⭐ |
 | **ORM** | Prisma | Latest |
 | **数据库** | SQLite / PostgreSQL | - |
 
@@ -406,10 +420,12 @@ interface ApiResponse<T> {
 | **练习案例** | 7 个 | ~1500 |
 | **测试专题** | 5 个 | ~1500 |
 | **部署专题** | 5 个 | ~800 |
-| **示例片段** | 20+ 个 | ~2000 |
-| **文档** | 20+ 篇 | ~8000 |
+| **安全专题** | 1 个 | ~100 |
+| **CORS 专题** | 2 个 | ~740 |
+| **示例片段** | 25+ 个 | ~2500 |
+| **文档** | 21+ 篇 | ~9200 |
 | **Prisma 示例** | 3 个 | ~950 |
-| **总计** | **70+** | **~18250** |
+| **总计** | **80+** | **~20390** |
 
 ---
 
@@ -479,6 +495,46 @@ MIT License
 
 ## 🎉 最近更新
 
+### 2026-06-07 ⭐ CORS 专题更新
+
+**新增内容**:
+
+- ✅ **CORS 完整示例**: `examples/03-middleware/cors.ts` (340+ 行)
+  - 开发/生产环境自动识别
+  - 动态 Origin 白名单验证
+  - 完整 Cookie 认证流程 (登录/受保护接口)
+  - exposedHeaders 演示 (分页响应头)
+  - 9 个 API 端点示例
+
+- ✅ **前端测试页面**: `examples/03-middleware/cors-test-frontend.html` (450+ 行)
+  - 精美图形化界面
+  - 4 大测试模块 (基础/认证/高级/信息)
+  - 实时响应头检查
+  - 一键测试所有 CORS 场景
+
+- ✅ **CORS 完全指南**: `docs/CORS_GUIDE.md` (700+ 行)
+  - CORS 概念解析与工作原理
+  - Elysia 配置详解 (生产级)
+  - 前端调用示例 (React/Vue)
+  - 6 个常见错误排查
+  - 快速测试清单
+
+**使用方式**:
+```bash
+# 启动 CORS 后端
+bun run examples/03-middleware/cors.ts
+
+# 浏览器打开测试页面
+examples/03-middleware/cors-test-frontend.html
+
+# 查看文档
+docs/CORS_GUIDE.md
+```
+
+**项目完整度**: 95% → **98%+**
+
+---
+
 ### 2026-06-03 ⭐ 重大更新
 
 **新增内容**:
@@ -510,4 +566,4 @@ MIT License
 
 ---
 
-*最后更新：2026-06-03*
+*最后更新：2026-06-07*
