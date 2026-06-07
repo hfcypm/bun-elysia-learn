@@ -1,19 +1,28 @@
 /**
- * PostgreSQL + Prisma 经典示例：博客系统（完整 CRUD + 关联查询）
+ * 示例片段: Blog System
  * 
- * 功能：
- * - 文章 CRUD（创建、读取、更新、删除）
- * - 分类管理
- * - 标签管理（多对多）
- * - 评论系统（一对多）
- * - 分页查询
- * - 全文搜索
- * - 文章统计
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 学习特定功能点
+ * 2. ✅ 理解代码实现细节
+ * 3. ✅ 可以组合到项目中
  * 
- * 技术栈：
- * - PostgreSQL 数据库
- * - Prisma ORM
- * - 关联查询（include, relation）
+ * ⚠️ 注意事项：
+ * - 示例代码可以复制使用
+ * - 根据需求调整配置
+ * - 参考完整案例学习
+ * 
+ * 📝 练习任务：
+ * - 运行示例
+ * - 修改参数测试
+ * - 集成到自己的项目
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { PrismaClient, Prisma } from '@prisma/client';

@@ -1,18 +1,31 @@
 /**
- * PM2 进程管理配置
+ * Level 4 - 部署专题: Pm2.Config
  * 
- * 功能:
- * - 多进程管理
- * - 自动重启
- * - 日志管理
- * - 性能监控
- * - 热重载
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 理解 Docker 容器化
+ * 2. ✅ 配置 Docker Compose
+ * 3. ✅ 实现健康检查
+ * 4. ✅ 优雅关闭服务
+ * 5. ✅ 使用 PM2 管理进程
  * 
- * 使用方法:
- * 1. 安装 PM2: npm install -g pm2
- * 2. 启动应用：pm2 start src/deployment/pm2.config.js
- * 3. 查看状态：pm2 status
- * 4. 查看日志：pm2 logs
+ * ⚠️ 注意事项：
+ * - Docker 需要安装 Docker Desktop
+ * - 健康检查接口要公开
+ * - 注意环境变量配置
+ * - 生产环境使用 HTTPS
+ * 
+ * 📝 练习任务：
+ * - 构建 Docker 镜像
+ * - 运行容器测试
+ * - 配置生产环境
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 module.exports = {

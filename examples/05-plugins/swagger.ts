@@ -1,7 +1,28 @@
 /**
- * Swagger API 文档示例
- * 知识点：OpenAPI 规范、API 文档生成
- * 运行：npx tsx examples/05-plugins/swagger.ts
+ * 示例片段: Swagger
+ * 
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 学习特定功能点
+ * 2. ✅ 理解代码实现细节
+ * 3. ✅ 可以组合到项目中
+ * 
+ * ⚠️ 注意事项：
+ * - 示例代码可以复制使用
+ * - 根据需求调整配置
+ * - 参考完整案例学习
+ * 
+ * 📝 练习任务：
+ * - 运行示例
+ * - 修改参数测试
+ * - 集成到自己的项目
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'

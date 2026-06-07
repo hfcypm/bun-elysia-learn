@@ -1,19 +1,30 @@
 /**
- * 练习 1.2 - 图书管理 CRUD
+ * Level 3 - 练习案例: Library
  * 
- * 学习目标:
- * - 实现完整的 CRUD 操作
- * - 使用内存存储管理数据
- * - 处理 HTTP 状态码
- * - 实现基础的数据验证
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 独立完成完整项目
+ * 2. ✅ 应用所学知识解决实际问题
+ * 3. ✅ 练习代码组织和优化
+ * 4. ✅ 培养调试能力
  * 
- * 功能要求:
- * 1. GET /books - 获取所有图书
- * 2. GET /books/:id - 获取单本图书
- * 3. POST /books - 创建新书
- * 4. PUT /books/:id - 更新图书信息
- * 5. DELETE /books/:id - 删除图书
- * 6. GET /books/search?keyword=xxx - 搜索图书
+ * ⚠️ 注意事项：
+ * - 先理解需求再 coding
+ * - 参考已学案例的实现
+ * - 遇到困难先查阅文档
+ * - 完成後对比参考答案
+ * 
+ * 📝 练习任务：
+ * - 完成所有功能
+ * - 添加额外特性
+ * - 编写测试用例
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'

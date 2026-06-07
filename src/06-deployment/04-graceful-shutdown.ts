@@ -1,15 +1,31 @@
 /**
- * 优雅关闭处理
+ * Level 4 - 部署专题: Graceful Shutdown
  * 
- * 功能:
- * - 捕获退出信号
- * - 关闭 HTTP 服务器
- * - 断开数据库连接
- * - 清理资源
- * - 完成未完成的请求
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 理解 Docker 容器化
+ * 2. ✅ 配置 Docker Compose
+ * 3. ✅ 实现健康检查
+ * 4. ✅ 优雅关闭服务
+ * 5. ✅ 使用 PM2 管理进程
  * 
- * 运行:
- * bun run src/deployment/04-graceful-shutdown.ts
+ * ⚠️ 注意事项：
+ * - Docker 需要安装 Docker Desktop
+ * - 健康检查接口要公开
+ * - 注意环境变量配置
+ * - 生产环境使用 HTTPS
+ * 
+ * 📝 练习任务：
+ * - 构建 Docker 镜像
+ * - 运行容器测试
+ * - 配置生产环境
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia } from 'elysia'

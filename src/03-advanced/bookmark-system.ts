@@ -1,26 +1,32 @@
 /**
- * 综合案例：在线书签管理系统
+ * Level 3 - 实战项目: Bookmark System
  * 
- * 系统功能:
- * - 用户注册与认证
- * - 书签 CRUD (创建/读取/更新/删除)
- * - 收藏夹管理
- * - 标签管理
- * - 搜索与筛选
- * - 统计与分析
- * - 评论功能
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 开发完整的业务系统
+ * 2. ✅ 实现用户认证和授权
+ * 3. ✅ 处理复杂的数据关系
+ * 4. ✅ 实现 WebSocket 实时通信
+ * 5. ✅ 掌握 API 最佳实践
  * 
- * 技术栈:
- * - Elysia.js (Web 框架)
- * - Prisma ORM (数据库操作)
- * - SQLite (数据库)
+ * ⚠️ 注意事项：
+ * - 注意代码组织和模块拆分
+ * - 错误处理要完善
+ * - 密码必须加密存储
+ * - JWT 设置合理的过期时间
+ * - 注意性能优化
  * 
- * 运行前准备:
- * 1. bun install prisma @prisma/client
- * 2. cp prisma/schema-bookmark.prisma prisma/schema.prisma
- * 3. bun x prisma migrate dev --name init
- * 4. bun x prisma generate
- * 5. bun run src/advanced/bookmark-system.ts
+ * 📝 练习任务：
+ * - 扩展系统功能
+ * - 添加单元测试
+ * - 优化查询性能
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'

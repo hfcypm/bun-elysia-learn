@@ -1,15 +1,32 @@
 /**
- * 结构化日志系统
+ * Level 2 - 进阶技能: Logging
  * 
- * 学习目标:
- * - 使用 Pino 进行结构化日志记录
- * - 日志级别管理
- * - 日志持久化
- * - 性能追踪
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 掌握请求验证（TypeBox）
+ * 2. ✅ 理解中间件的工作原理
+ * 3. ✅ 实现文件上传功能
+ * 4. ✅ 掌握数据库 CRUD 操作
+ * 5. ✅ 使用 Prisma ORM
  * 
- * 安装依赖:
- * bun install pino
- * bun install -D pino-pretty
+ * ⚠️ 注意事项：
+ * - 验证失败会返回 400 状态码
+ * - 中间件按顺序执行
+ * - 文件上传注意大小限制
+ * - 数据库连接需要正确配置
+ * - Prisma 需要先 generate
+ * 
+ * 📝 练习任务：
+ * - 添加更多验证规则
+ * - 实现自定义中间件
+ * - 扩展数据库模型
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'

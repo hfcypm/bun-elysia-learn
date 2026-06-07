@@ -1,21 +1,31 @@
 /**
- * 健康检查端点
+ * Level 4 - 部署专题: Health Check
  * 
- * 功能:
- * - 应用健康状态
- * - 数据库连接检查
- * - Redis 连接检查
- * - 内存使用情况
- * - 运行时长
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 理解 Docker 容器化
+ * 2. ✅ 配置 Docker Compose
+ * 3. ✅ 实现健康检查
+ * 4. ✅ 优雅关闭服务
+ * 5. ✅ 使用 PM2 管理进程
  * 
- * 使用场景:
- * - Docker HEALTHCHECK
- * - Kubernetes Readiness/Liveness Probe
- * - 负载均衡健康检查
- * - 监控系统
+ * ⚠️ 注意事项：
+ * - Docker 需要安装 Docker Desktop
+ * - 健康检查接口要公开
+ * - 注意环境变量配置
+ * - 生产环境使用 HTTPS
  * 
- * 运行:
- * bun run src/deployment/03-health-check.ts
+ * 📝 练习任务：
+ * - 构建 Docker 镜像
+ * - 运行容器测试
+ * - 配置生产环境
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'

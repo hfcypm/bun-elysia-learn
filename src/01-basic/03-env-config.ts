@@ -1,14 +1,31 @@
 /**
- * 环境变量与配置管理
+ * Level 1 - 基础入门: Env Config
  * 
- * 学习目标:
- * - 使用 dotenv 管理环境变量
- * - 配置验证
- * - 多环境配置
- * - 敏感信息管理
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 创建一个基本的 Elysia 应用
+ * 2. ✅ 定义基础路由和处理请求
+ * 3. ✅ 启动 HTTP 服务器
+ * 4. ✅ 理解请求和响应的数据流
+ * 5. ✅ 通过浏览器或工具测试 API
  * 
- * 安装依赖:
- * bun install dotenv
+ * ⚠️ 注意事项：
+ * - 确保已安装 Bun v1.0+ 或 Node.js 18+
+ * - 端口被占用时修改为其他端口
+ * - JSON 响应会自动设置 Content-Type
+ * - 使用 Ctrl+C 停止服务器
+ * 
+ * 📝 练习任务：
+ * - 修改响应内容
+ * - 添加新的路由
+ * - 尝试不同的 HTTP 方法
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'

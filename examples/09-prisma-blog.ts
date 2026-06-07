@@ -1,17 +1,28 @@
 /**
- * Prisma 基础入门案例 2: 博客系统
+ * 示例片段: Prisma Blog
  * 
- * 学习目标:
- * - 一对多关系
- * - 多对多关系
- * - 关联查询
- * - 嵌套创建
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 学习特定功能点
+ * 2. ✅ 理解代码实现细节
+ * 3. ✅ 可以组合到项目中
  * 
- * 运行前准备:
- * 1. cp prisma/schema-blog.prisma prisma/schema.prisma
- * 2. bun x prisma migrate dev --name init
- * 3. bun x prisma generate
- * 4. bun run examples/prisma-blog.ts
+ * ⚠️ 注意事项：
+ * - 示例代码可以复制使用
+ * - 根据需求调整配置
+ * - 参考完整案例学习
+ * 
+ * 📝 练习任务：
+ * - 运行示例
+ * - 修改参数测试
+ * - 集成到自己的项目
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { PrismaClient } from '@prisma/client'

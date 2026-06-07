@@ -1,12 +1,28 @@
 /**
- * CORS 中间件完整示例 (生产级)
- * 知识点：跨域资源共享配置、生产环境部署、前端调用
- * 运行：bun run examples/03-middleware/cors.ts
+ * 示例片段: Cors
  * 
- * 测试工具:
- * 1. 浏览器控制台：fetch('http://localhost:3302/api/data')
- * 2. 在线工具：https://cors-test.codefetch.com/
- * 3. curl 命令：curl -i http://localhost:3302/api/data
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 学习特定功能点
+ * 2. ✅ 理解代码实现细节
+ * 3. ✅ 可以组合到项目中
+ * 
+ * ⚠️ 注意事项：
+ * - 示例代码可以复制使用
+ * - 根据需求调整配置
+ * - 参考完整案例学习
+ * 
+ * 📝 练习任务：
+ * - 运行示例
+ * - 修改参数测试
+ * - 集成到自己的项目
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia } from 'elysia'

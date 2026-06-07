@@ -1,9 +1,31 @@
 /**
- * Level 1 - 案例 1: Hello Elysia
- * 知识点:
- * - 创建 Elysia 应用
- * - 基础路由定义
- * - 启动服务器
+ * Level 1 - 基础入门: Hello
+ * 
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 创建一个基本的 Elysia 应用
+ * 2. ✅ 定义基础路由和处理请求
+ * 3. ✅ 启动 HTTP 服务器
+ * 4. ✅ 理解请求和响应的数据流
+ * 5. ✅ 通过浏览器或工具测试 API
+ * 
+ * ⚠️ 注意事项：
+ * - 确保已安装 Bun v1.0+ 或 Node.js 18+
+ * - 端口被占用时修改为其他端口
+ * - JSON 响应会自动设置 Content-Type
+ * - 使用 Ctrl+C 停止服务器
+ * 
+ * 📝 练习任务：
+ * - 修改响应内容
+ * - 添加新的路由
+ * - 尝试不同的 HTTP 方法
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia } from 'elysia'
@@ -17,7 +39,7 @@ const app = new Elysia()
   })
   .get('/hello/:name', ({ params }) => {
     return {
-      message: `你好，${params.name}!`,
+      message: \`你好，\${params.name}!\`,
       tip: '这是路径参数的使用示例'
     }
   })

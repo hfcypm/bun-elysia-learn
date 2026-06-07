@@ -1,15 +1,30 @@
 /**
- * Helmet 安全响应头
+ * Level 4 - 安全专题: Helmet Security
  * 
- * 功能:
- * - 防止 XSS 攻击
- * - 防止点击劫持
- * - 防止 MIME 类型嗅探
- * - 内容安全策略
- * - HSTS (强制 HTTPS)
+ * 📖 学习目标：
+ * 完成本案例后，你应该能够：
+ * 1. ✅ 理解 OWASP Top 10
+ * 2. ✅ 配置安全响应头
+ * 3. ✅ 防止常见攻击
+ * 4. ✅ 保护敏感数据
  * 
- * 运行:
- * bun run src/security/01-helmet-security.ts
+ * ⚠️ 注意事项：
+ * - 生产环境必须配置 HTTPS
+ * - 不要硬编码密钥
+ * - 定期更新依赖
+ * - 记录安全日志
+ * 
+ * 📝 练习任务：
+ * - 配置所有安全头
+ * - 进行安全检查
+ * - 阅读 OWASP 文档
+ * 
+ * 🔗 相关文档：
+ * - docs/00-README.md - 学习指南
+ * - docs/00-INDEX.md - 文档导航
+ * 
+ * 运行：bun run <file>
+ * 测试：http://localhost:<port>
  */
 
 import { Elysia, t } from 'elysia'
