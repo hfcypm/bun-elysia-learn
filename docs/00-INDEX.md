@@ -29,19 +29,35 @@
 | **06** | [06-PRACTICE.md](06-PRACTICE.md) | 💻 实战练习题 | 按需查阅 |
 | **07** | [07-FILE_UPLOAD_GUIDE.md](07-FILE_UPLOAD_GUIDE.md) | 📷 文件上传实战 | 30 分钟 |
 
-### 工具参考
+### 进阶专题（按需学习）
 
-| 编号 | 文档 | 说明 | 使用场景 |
+| 编号 | 文档 | 说明 | 预估时间 |
 |------|------|------|----------|
-| **08** | [08-QUICK_REFERENCE.md](08-QUICK_REFERENCE.md) | 🚀 快速参考卡片 | 开发时速查 |
-| **-** | [Postman Collection](elysia-learning.postman_collection.json) | 🧪 API 测试集合 | 接口测试 |
-| **-** | [upload-test.html](upload-test.html) | 📤 上传测试页面 | 文件上传测试 |
+| **10** | [10-CORS_GUIDE.md](10-CORS_GUIDE.md) | 🌐 CORS 跨域完全指南 | 30 分钟 |
+| **11** | [11-ELYSIA_PRISMA_INTEGRATION.md](11-ELYSIA_PRISMA_INTEGRATION.md) | 🗄️ Elysia + Prisma 集成 | 60 分钟 |
+| **12** | [12-GITHUB_ACTIONS_DEPLOY_GUIDE.md](12-GITHUB_ACTIONS_DEPLOY_GUIDE.md) | 🚀 GitHub Actions 部署 | 20 分钟 |
 
-### 其他
+### 完整教程（系统深入）
 
-| 编号 | 文档 | 说明 |
-|------|------|------|
-| **99** | [99-UPDATE_LOG.md](99-UPDATE_LOG.md) | 📝 更新说明 |
+| 编号 | 文档 | 说明 | 内容量 |
+|------|------|------|--------|
+| **13** | [13-BOOKMARK_SYSTEM_GUIDE.md](13-BOOKMARK_SYSTEM_GUIDE.md) | 🔖 书签系统实战 | 350+ 行 |
+| **14** | [14-PRISMA_TUTORIAL.md](14-PRISMA_TUTORIAL.md) | 📚 Prisma 完整教程 | 12 章 |
+| **15** | [15-PRISMA_LEARNING_PATH.md](15-PRISMA_LEARNING_PATH.md) | 🗺️ Prisma 学习路径 | 7 天计划 |
+| **16** | [16-PRISMA_GUIDE.md](16-PRISMA_GUIDE.md) | 🔧 Prisma 使用指南 | 参考手册 |
+| **17** | [17-TESTING.md](17-TESTING.md) | 🧪 测试完全指南 | 673 行 |
+| **18** | [18-SECURITY_GUIDE.md](18-SECURITY_GUIDE.md) | 🔐 OWASP 安全指南 | 618 行 |
+| **19** | [19-PERFORMANCE.md](19-PERFORMANCE.md) | ⚡ 性能优化指南 | 497 行 |
+| **20** | [20-FAQ.md](20-FAQ.md) | ❓ 常见问题解答 | 402 行 |
+| **21** | [21-案例分析与实践.md](21-案例分析与实践.md) | 💡 实战案例分析 | 按需 |
+
+### 其他资源
+
+| 文件 | 说明 | 使用场景 |
+|------|------|----------|
+| [Postman Collection](elysia-learning.postman_collection.json) | 🧪 API 测试集合 | 接口测试 |
+| [upload-test.html](upload-test.html) | 📤 上传测试页面 | 文件上传测试 |
+| [POSTGRES_PRISMA_GUIDE/](POSTGRES_PRISMA_GUIDE/) | 📚 PostgreSQL + Prisma 教程 | 6 章完整教程 |
 
 ---
 
