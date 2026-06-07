@@ -1,5 +1,3 @@
 # 注释：以 # 开头
 # 忽略整个目录（结尾加 /）
-.node_modules/
-.git/
-.idea/
+node_modules/
