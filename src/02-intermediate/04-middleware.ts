@@ -1,37 +1,30 @@
 /**
- * Level 2 - 进阶技能: Middleware
+ * Level 2 - 进阶技能: 04 Middleware
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 理解中间件的工作原理
- * 2. ✅ 实现请求认证中间件
- * 3. ✅ 编写日志记录中间件
- * 4. ✅ 使用 onRequest/onAfterHandle 钩子
- * 5. ✅ 中间件的执行顺序
+ * 1. ✅ 理解中间件的执行流程
+ * 2. ✅ 实现认证检查中间件
+ * 3. ✅ 实现日志记录中间件
+ * 4. ✅ 使用 onRequest 钩子拦截请求
+ * 5. ✅ 理解中间件的顺序
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3003，被占用请修改
- * - 运行前需要 bun x prisma generate
- * - 确保数据库连接字符串正确
- * - 首次运行需要执行迁移
- * - 生产环境配置具体域名，不要用 *
- * - 前后端分离时必须配置
- * - 携带 Cookie 需要 credentials: true
- * - 验证失败返回 400 状态码
- * - 中间件按顺序执行
- * - 错误处理要完善
+ * - 默认端口 3003
+ * - 生产环境配置具体域名
+ * - 前后端分离时必须
+ * - 携带 Cookie 需 credentials: true
+ * - 共6个 API 端点，分步测试
  * 
  * 📝 练习任务：
- * - 实现请求时间记录
- * - 添加用户 ID 验证
- * - 实现限流中间件
+ * - 实现请求耗时记录中间件
+ * - 添加响应头修改中间件
+ * - 组合多个中间件
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
- * - docs/10-CORS_GUIDE.md - CORS 完全指南
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
+- docs/10-CORS_GUIDE.md - CORS 完全指南
  * 
  * 运行：bun run src/02-intermediate/04-middleware.ts
  * 测试：http://localhost:3003

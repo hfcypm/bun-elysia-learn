@@ -1,36 +1,30 @@
 /**
- * Level 2 - 进阶技能: File Upload
+ * Level 2 - 进阶技能: 05 File Upload
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
  * 1. ✅ 实现单文件上传功能
- * 2. ✅ 实现多文件同时上传
- * 3. ✅ 限制文件类型和大小
- * 4. ✅ 处理上传文件的存储
- * 5. ✅ 返回文件访问 URL
+ * 2. ✅ 处理 multipart/form-data
+ * 3. ✅ 保存上传文件到服务器
+ * 4. ✅ 返回文件 URL
+ * 5. ✅ 验证文件类型和大小
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3007，被占用请修改
- * - 运行前需要 bun x prisma generate
- * - 确保数据库连接字符串正确
- * - 首次运行需要执行迁移
- * - 限制上传文件大小
+ * - 默认端口 3007
+ * - 限制文件大小
  * - 验证文件类型
- * - 注意文件存储安全
- * - 验证失败返回 400 状态码
- * - 中间件按顺序执行
- * - 错误处理要完善
+ * - 注意文件存储位置
+ * - 共10个 API 端点，分步测试
  * 
  * 📝 练习任务：
- * - 限制文件类型为图片
- * - 实现文件压缩
- * - 添加上传进度显示
+ * - 限制只能上传图片
+ * - 实现图片压缩
+ * - 显示上传进度
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
+- docs/07-文件上传指南.md - 文件上传实战
  * 
  * 运行：bun run src/02-intermediate/05-file-upload.ts
  * 测试：http://localhost:3007

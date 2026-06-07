@@ -1,28 +1,28 @@
 /**
- * Level 1 - 基础入门: Hello
+ * Level 1 - 基础入门: 01 Hello
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
  * 1. ✅ 创建第一个 Elysia 应用
- * 2. ✅ 定义基础 GET 路由
- * 3. ✅ 理解路径参数 (/hello/:name) 的用法
- * 4. ✅ 理解查询参数 (/query?name=xxx) 的用法
- * 5. ✅ 启动服务器并通过浏览器测试
+ * 2. ✅ 定义 GET 路由 (/, /hello/:name, /query)
+ * 3. ✅ 理解路径参数 params.name 的解构
+ * 4. ✅ 理解查询参数 query 的用法
+ * 5. ✅ 启动服务器并访问测试
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3000，被占用请修改
+ * - 默认端口 3000
  * - Bun v1.0+ 或 Node.js 18+
  * - JSON 响应自动设置 Content-Type
  * - Ctrl+C 停止服务器
  * 
  * 📝 练习任务：
- * - 修改欢迎消息内容
+ * - 修改首页欢迎消息
  * - 添加 /about 路由返回项目介绍
- * - 尝试添加 POST /submit 路由
+ * - 添加 POST 路由接收数据
  * 
  * 🔗 相关文档：
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
  * 
  * 运行：bun run src/01-basic/01-hello.ts
  * 测试：http://localhost:3000

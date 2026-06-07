@@ -1,41 +1,28 @@
 /**
- * Level 3 - 实战项目: Bookmark System
+ * Level 3 - 实战项目：书签系统
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 开发完整的业务系统
- * 2. ✅ 实现 CRUD 15+ 个 API 端点
- * 3. ✅ 分类和标签管理
- * 4. ✅ 搜索和过滤功能
- * 5. ✅ 数据导入导出
+ * 1. ✅ 开发完整业务系统
+ * 2. ✅ 实现 28 个 API 端点
+ * 3. ✅ 实现书签 CRUD
+ * 4. ✅ 实现标签管理
+ * 5. ✅ 实现分类管理
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3021，被占用请修改
- * - 运行前需要 bun x prisma generate
- * - 确保数据库连接字符串正确
- * - 首次运行需要执行迁移
- * - JWT_SECRET 必须使用环境变量
- * - Token 设置合理的过期时间
- * - 敏感数据不要放在 payload 中
- * - WebSocket 使用 ws:// 协议
- * - 处理连接断开重连
- * - 注意并发连接数
- * - 参考完整文档学习
- * - 代码量较大，分步学习
- * - 注意代码组织结构
+ * - 代码量大，分步学习
+ * - 先理解数据模型
+ * - 参考文档说明
+ * - 测试每个端点
  * 
  * 📝 练习任务：
- * - 添加更多功能端点
- * - 实现缓存层
- * - 添加单元测试
+ * - 添加搜索功能
+ * - 实现书签导入
+ * - 添加用户权限
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
- * - docs/18-SECURITY_GUIDE.md - 安全指南 (JWT)
- * - docs/08-QUICK_REFERENCE.md - 快速参考
+ * - docs/13-BOOKMARK_SYSTEM_GUIDE.md - 书签系统
  * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
  * 
  * 运行：bun run src/03-advanced/bookmark-system.ts
  * 测试：http://localhost:3021

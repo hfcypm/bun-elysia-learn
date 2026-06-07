@@ -1,28 +1,29 @@
 /**
- * Level 1 - 基础入门: Http Methods
+ * Level 1 - 基础入门: 02 Http Methods
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 掌握完整的 RESTful API 设计
- * 2. ✅ 实现 CRUD 四种 HTTP 方法
- * 3. ✅ 理解资源命名规范
- * 4. ✅ 返回合适的 HTTP 状态码
- * 5. ✅ 使用 Postman 或 curl 测试 API
+ * 1. ✅ 实现完整的 RESTful CRUD API
+ * 2. ✅ 掌握 GET 获取资源列表
+ * 3. ✅ 掌握 POST 创建新资源
+ * 4. ✅ 掌握 PUT 更新资源
+ * 5. ✅ 掌握 DELETE 删除资源
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3001，被占用请修改
+ * - 默认端口 3001
+ * - 共6个 API 端点，分步测试
  * - Bun v1.0+ 或 Node.js 18+
  * - JSON 响应自动设置 Content-Type
  * - Ctrl+C 停止服务器
  * 
  * 📝 练习任务：
  * - 添加 PATCH 方法部分更新
- * - 实现资源嵌套 (/users/:id/posts)
- * - 添加自定义 404 响应
+ * - 实现资源嵌套路由
+ * - 添加自定义 404 处理
  * 
  * 🔗 相关文档：
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
  * 
  * 运行：bun run src/01-basic/02-http-methods.ts
  * 测试：http://localhost:3001

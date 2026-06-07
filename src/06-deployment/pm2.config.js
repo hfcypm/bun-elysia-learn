@@ -1,32 +1,30 @@
 /**
- * Level 4 - 部署专题: Pm2.Config
+ * Level 4 - 部署专题：PM2 配置
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 掌握 PM2 进程管理
- * 2. ✅ 配置集群模式
- * 3. ✅ 设置实例数量
- * 4. ✅ 配置日志和重启策略
- * 5. ✅ 监控应用状态
+ * 1. ✅ 掌握容器化部署
+ * 2. ✅ 配置健康检查
+ * 3. ✅ K8s 兼容配置
+ * 4. ✅ 优雅关闭服务
+ * 5. ✅ 使用 PM2 管理
  * 
  * ⚠️ 注意事项：
- * - 生产环境使用 HTTPS
- * - 环境变量配置好再部署
- * - Docker 需要安装 Docker Desktop
+ * - 生产环境用 HTTPS
+ * - 配置环境变量
+ * - Docker 需要准备
+ * - 监控日志输出
  * 
  * 📝 练习任务：
- * - 实际运行部署命令
- * - 修改配置参数
- * - 查看部署日志
+ * - 调整实例数量
+ * - 配置监控
+ * - 设置告警
  * 
  * 🔗 相关文档：
- * - docs/12-GITHUB_ACTIONS_DEPLOY_GUIDE.md - GitHub Actions 部署
- * - deployment/01-DEPLOYMENT.md - 完整部署指南
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+ * - deployment/01-DEPLOYMENT.md - 部署指南
+ * - docs/12-GITHUB_ACTIONS_DEPLOY_GUIDE.md - GitHub Actions
  * 
  * 运行：bun run src/06-deployment/pm2.config.js
- * 测试：http://localhost:3000
  */
 
 module.exports = {

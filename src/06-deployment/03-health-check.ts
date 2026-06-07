@@ -1,33 +1,31 @@
 /**
- * Level 4 - 部署专题: Health Check
+ * Level 4 - 部署专题：健康检查
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 实现健康检查端点
- * 2. ✅ 区分就绪和存活探针
- * 3. ✅ 返回详细的健康状态
- * 4. ✅ K8s 兼容的健康检查
- * 5. ✅ 检查依赖服务状态
+ * 1. ✅ 掌握容器化部署
+ * 2. ✅ 配置健康检查
+ * 3. ✅ K8s 兼容配置
+ * 4. ✅ 优雅关闭服务
+ * 5. ✅ 使用 PM2 管理
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3000，被占用请修改
- * - 生产环境使用 HTTPS
- * - 环境变量配置好再部署
- * - Docker 需要安装 Docker Desktop
+ * - 生产环境用 HTTPS
+ * - 配置环境变量
+ * - Docker 需要准备
+ * - 监控日志输出
  * 
  * 📝 练习任务：
- * - 实际运行部署命令
- * - 修改配置参数
- * - 查看部署日志
+ * - 添加数据库检查
+ * - 添加缓存检查
+ * - 实现深度检查
  * 
  * 🔗 相关文档：
- * - docs/12-GITHUB_ACTIONS_DEPLOY_GUIDE.md - GitHub Actions 部署
- * - deployment/01-DEPLOYMENT.md - 完整部署指南
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+ * - deployment/01-DEPLOYMENT.md - 部署指南
+ * - docs/12-GITHUB_ACTIONS_DEPLOY_GUIDE.md - GitHub Actions
  * 
  * 运行：bun run src/06-deployment/03-health-check.ts
- * 测试：http://localhost:3000
+ * 测试：http://localhost:3000/health
  */
 
 import { Elysia, t } from 'elysia'

@@ -1,36 +1,35 @@
 /**
- * Level 3 - 实战项目: Websocket
+ * Level 3 - 实战项目: 07 Websocket
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 理解 WebSocket 工作原理
- * 2. ✅ 实现实时双向通信
- * 3. ✅ 处理连接/断开事件
- * 4. ✅ 广播消息给所有客户端
- * 5. ✅ 实现简单的聊天功能
+ * 1. ✅ 理解 WebSocket 协议
+ * 2. ✅ 建立 WebSocket 连接
+ * 3. ✅ 实现客户端消息处理
+ * 4. ✅ 广播消息给所有连接
+ * 5. ✅ 处理断开连接事件
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3006，被占用请修改
- * - JWT_SECRET 必须使用环境变量
- * - Token 设置合理的过期时间
- * - 敏感数据不要放在 payload 中
- * - WebSocket 使用 ws:// 协议
+ * - 默认端口 3006
+ * - JWT_SECRET 必须环境变量
+ * - Token 过期时间合理设置
+ * - 敏感数据不要放 payload
+ * - 客户端使用 ws:// 协议
  * - 处理连接断开重连
- * - 注意并发连接数
- * - 参考完整文档学习
- * - 代码量较大，分步学习
- * - 注意代码组织结构
+ * - 浏览器控制台测试
+ * - 共9个 API 端点，分步测试
+ * - 代码量较大，建议分步学习
  * 
  * 📝 练习任务：
- * - 添加更多功能端点
- * - 实现缓存层
- * - 添加单元测试
+ * - 添加私聊功能
+ * - 实现聊天室
+ * - 发送系统通知
  * 
  * 🔗 相关文档：
- * - docs/18-SECURITY_GUIDE.md - 安全指南 (JWT)
- * - docs/08-QUICK_REFERENCE.md - 快速参考
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
+- docs/18-SECURITY_GUIDE.md - 安全指南
+- docs/08-QUICK_REFERENCE.md - 快速参考
  * 
  * 运行：bun run src/03-advanced/07-websocket.ts
  * 测试：http://localhost:3006

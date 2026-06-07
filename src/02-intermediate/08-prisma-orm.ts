@@ -1,33 +1,31 @@
 /**
- * Level 2 - 进阶技能: Prisma Orm
+ * Level 2 - 进阶技能: 08 Prisma Orm
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 掌握 Prisma ORM 基本使用
- * 2. ✅ 定义数据模型 (Schema)
- * 3. ✅ 执行数据库迁移
- * 4. ✅ 使用 Prisma Client 查询
+ * 1. ✅ 定义 Prisma Schema 数据模型
+ * 2. ✅ 执行 prisma migrate 创建迁移
+ * 3. ✅ 使用 PrismaClient 查询数据
+ * 4. ✅ 实现 findMany/findFirst/create/update/delete
  * 5. ✅ 理解 ORM 的优势
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3020，被占用请修改
- * - 运行前需要 bun x prisma generate
+ * - 默认端口 3020
+ * - 运行前：bun x prisma generate
+ * - 首次运行需要：bun x prisma migrate dev
  * - 确保数据库连接字符串正确
- * - 首次运行需要执行迁移
- * - 验证失败返回 400 状态码
- * - 中间件按顺序执行
- * - 错误处理要完善
+ * - 共21个 API 端点，分步测试
  * 
  * 📝 练习任务：
  * - 添加新的数据字段
- * - 实现批量操作
- * - 添加查询条件过滤
+ * - 实现批量创建
+ * - 添加查询过滤
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
+- docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
+- docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
  * 
  * 运行：bun run src/02-intermediate/08-prisma-orm.ts
  * 测试：http://localhost:3020

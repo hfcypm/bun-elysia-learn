@@ -1,39 +1,29 @@
 /**
- * Level 3 - 实战项目: Api Versioning
+ * Level 3 - 实战项目：API 版本控制
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 理解 API 版本控制的意义
- * 2. ✅ 实现 URL 路径版本化 (/v1/, /v2/)
- * 3. ✅ 处理不同版本的兼容性
- * 4. ✅ 版本迁移策略
- * 5. ✅ 使用路由分组组织代码
+ * 1. ✅ 理解 API 版本控制
+ * 2. ✅ 使用路由分组
+ * 3. ✅ 实现 /api/v1/
+ * 4. ✅ 实现 /api/v2/
+ * 5. ✅ 处理版本差异
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3019，被占用请修改
- * - JWT_SECRET 必须使用环境变量
- * - Token 设置合理的过期时间
- * - 敏感数据不要放在 payload 中
- * - WebSocket 使用 ws:// 协议
- * - 处理连接断开重连
- * - 注意并发连接数
- * - 参考完整文档学习
- * - 代码量较大，分步学习
- * - 注意代码组织结构
+ * - 版本命名规范
+ * - 保持向后兼容
+ * - 文档说明差异
  * 
  * 📝 练习任务：
- * - 添加更多功能端点
- * - 实现缓存层
- * - 添加单元测试
+ * - 添加 v3 版本
+ * - 实现版本协商
+ * - 添加废弃标记
  * 
  * 🔗 相关文档：
- * - docs/18-SECURITY_GUIDE.md - 安全指南 (JWT)
- * - docs/08-QUICK_REFERENCE.md - 快速参考
  * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+ * - docs/08-QUICK_REFERENCE.md - 快速参考
  * 
  * 运行：bun run src/03-advanced/08-api-versioning.ts
- * 测试：http://localhost:3019
  */
 
 import { Elysia, t } from 'elysia'

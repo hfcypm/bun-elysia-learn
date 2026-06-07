@@ -1,42 +1,30 @@
 /**
- * 示例片段: Auth System
+ * PostgreSQL + Prisma 示例：用户认证系统
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 学习 Prisma 实战用法
- * 2. ✅ 理解数据模型设计
- * 3. ✅ 掌握复杂查询
- * 4. ✅ 事务处理
+ * 1. ✅ 配置 PostgreSQL 环境
+ * 2. ✅ 使用 Prisma ORM
+ * 3. ✅ 实现完整的用户注册/登录
+ * 4. ✅ 生产环境配置
  * 
  * ⚠️ 注意事项：
- * - 运行前需要 bun x prisma generate
- * - 确保数据库连接字符串正确
- * - 首次运行需要执行迁移
- * - JWT_SECRET 必须使用环境变量
- * - Token 设置合理的过期时间
- * - 敏感数据不要放在 payload 中
- * - 需要PostgreSQL数据库
- * - 确保数据库服务已启动
- * - 检查连接配置
- * - 注意 SQL 注入防护
- * - 示例代码可直接复制
- * - 根据项目需求调整
- * - 参考完整案例深入学习
+ * - 需要运行 PostgreSQL 数据库
+ * - 配置 DATABASE_URL 环境变量
+ * - 先执行 prisma migrate
+ * - 参考 POSTGRES_PRISMA_GUIDE 文档
  * 
  * 📝 练习任务：
- * - 运行示例测试效果
- * - 修改参数观察变化
- * - 集成到自己的项目
+ * - 实现完整的用户注册/登录
+ * - PostgreSQL + Prisma 操作
+ * - JWT Token 生成验证
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
- * - docs/18-SECURITY_GUIDE.md - 安全指南 (JWT)
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+ * - docs/POSTGRES_PRISMA_GUIDE/00-README.md - 总索引
+ * - docs/POSTGRES_PRISMA_GUIDE/01-GETTING_STARTED.md - 环境搭建
+ * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - 集成指南
  * 
  * 运行：bun run examples/08-postgres-prisma/auth-system.ts
- * 测试：http://localhost:3000
  */
 
 import { PrismaClient } from '@prisma/client';

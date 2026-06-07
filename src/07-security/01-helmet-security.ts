@@ -1,28 +1,28 @@
 /**
- * Level 4 - 安全专题: Helmet Security
+ * Level 4 - 安全专题：Helmet 安全响应头
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
  * 1. ✅ 理解 OWASP Top 10 安全风险
- * 2. ✅ 配置 Helmet 安全响应头
- * 3. ✅ 防止 XSS 跨站脚本攻击
- * 4. ✅ 防止 CSRF 跨站请求伪造
- * 5. ✅ 实现内容安全策略 (CSP)
+ * 2. ✅ 配置 Helmet 安全头
+ * 3. ✅ 防止 XSS 攻击
+ * 4. ✅ 防止 CSRF 攻击
+ * 5. ✅ 实现内容安全策略
  * 
  * ⚠️ 注意事项：
- * - 默认端口 3000，被占用请修改
  * - 生产环境必须 HTTPS
+ * - 配置所有安全响应头
+ * - 定期更新依赖
  * - 不要暴露敏感信息
- * - 定期更新依赖包
  * 
  * 📝 练习任务：
- * - 配置所有安全头
+ * - 配置所有 Helmet 头
  * - 使用安全扫描工具检查
  * - 阅读 OWASP 文档
  * 
  * 🔗 相关文档：
+ * - docs/18-SECURITY_GUIDE.md - OWASP Top 10
  * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
  * 
  * 运行：bun run src/07-security/01-helmet-security.ts
  * 测试：http://localhost:3000

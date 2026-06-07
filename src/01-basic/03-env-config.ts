@@ -1,39 +1,40 @@
 /**
- * Level 1 - 基础入门: Env Config
+ * Level 1 - 基础入门: 03 Env Config
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 理解环境变量的作用
- * 2. ✅ 使用 process.env 读取配置
- * 3. ✅ 区分开发/生产环境
- * 4. ✅ 创建和使用 .env 文件
- * 5. ✅ 避免硬编码敏感信息
+ * 1. ✅ 理解环境变量的重要性
+ * 2. ✅ 使用 process.env.NODE_ENV
+ * 3. ✅ 读取自定义环境变量
+ * 4. ✅ 区分开发/生产环境配置
+ * 5. ✅ 使用 .env 文件管理配置
  * 
  * ⚠️ 注意事项：
- * - 生产环境配置具体域名，不要用 *
- * - 前后端分离时必须配置
- * - 携带 Cookie 需要 credentials: true
- * - JWT_SECRET 必须使用环境变量
- * - Token 设置合理的过期时间
- * - 敏感数据不要放在 payload 中
- * - 需要SQLite数据库
- * - 确保数据库服务已启动
+ * - 默认端口 3000
+ * - 生产环境配置具体域名
+ * - 前后端分离时必须
+ * - 携带 Cookie 需 credentials: true
+ * - JWT_SECRET 必须环境变量
+ * - Token 过期时间合理设置
+ * - 敏感数据不要放 payload
+ * - 确保SQLite服务已启动
  * - 检查连接配置
  * - 注意 SQL 注入防护
+ * - 共8个 API 端点，分步测试
  * - Bun v1.0+ 或 Node.js 18+
  * - JSON 响应自动设置 Content-Type
  * - Ctrl+C 停止服务器
  * 
  * 📝 练习任务：
  * - 添加新的环境变量
- * - 创建 .env.example 文件
- * - 实现配置验证
+ * - 创建 .env.example 模板
+ * - 实现配置对象验证
  * 
  * 🔗 相关文档：
- * - docs/10-CORS_GUIDE.md - CORS 完全指南
- * - docs/18-SECURITY_GUIDE.md - 安全指南 (JWT)
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+- docs/00-README.md - 学习指南
+- docs/00-INDEX.md - 文档导航
+- docs/10-CORS_GUIDE.md - CORS 完全指南
+- docs/18-SECURITY_GUIDE.md - 安全指南
  * 
  * 运行：bun run src/01-basic/03-env-config.ts
  * 测试：http://localhost:3000

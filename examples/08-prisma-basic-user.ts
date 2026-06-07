@@ -1,34 +1,29 @@
 /**
- * 示例片段: Prisma Basic User
+ * Prisma 示例：Prisma 用户管理
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 学习 Prisma 实战用法
- * 2. ✅ 理解数据模型设计
- * 3. ✅ 掌握复杂查询
- * 4. ✅ 事务处理
+ * 1. ✅ 使用 Prisma ORM
+ * 2. ✅ 定义数据模型
+ * 3. ✅ Prisma 基础 CRUD
+ * 4. ✅ SQLite 数据库操作
  * 
  * ⚠️ 注意事项：
- * - 运行前需要 bun x prisma generate
- * - 确保数据库连接字符串正确
- * - 首次运行需要执行迁移
- * - 示例代码可直接复制
- * - 根据项目需求调整
- * - 参考完整案例深入学习
+ * - 先复制 schema 文件
+ * - 运行 bun x prisma generate
+ * - 执行数据库迁移
  * 
  * 📝 练习任务：
- * - 运行示例测试效果
- * - 修改参数观察变化
- * - 集成到自己的项目
+ * - Prisma 基础 CRUD
+ * - 用户模型操作
+ * - SQLite 数据库
  * 
  * 🔗 相关文档：
  * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
- * - docs/00-README.md - 学习指南
- * - docs/00-INDEX.md - 文档导航
+ * - docs/15-PRISMA_LEARNING_PATH.md - 学习路径
+ * - docs/16-PRISMA_GUIDE.md - 使用指南
  * 
  * 运行：bun run examples/08-prisma-basic-user.ts
- * 测试：http://localhost:3000
  */
 
 import { PrismaClient } from '@prisma/client'
