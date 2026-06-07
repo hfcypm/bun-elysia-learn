@@ -3,29 +3,29 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 创建一个基本的 Elysia 应用
- * 2. ✅ 定义基础路由和处理请求
- * 3. ✅ 启动 HTTP 服务器
- * 4. ✅ 理解请求和响应的数据流
- * 5. ✅ 通过浏览器或工具测试 API
+ * 1. ✅ 创建第一个 Elysia 应用
+ * 2. ✅ 定义基础 GET 路由
+ * 3. ✅ 理解路径参数 (/hello/:name) 的用法
+ * 4. ✅ 理解查询参数 (/query?name=xxx) 的用法
+ * 5. ✅ 启动服务器并通过浏览器测试
  * 
  * ⚠️ 注意事项：
- * - 确保已安装 Bun v1.0+ 或 Node.js 18+
- * - 端口被占用时修改为其他端口
- * - JSON 响应会自动设置 Content-Type
- * - 使用 Ctrl+C 停止服务器
+ * - 默认端口 3000，被占用请修改
+ * - Bun v1.0+ 或 Node.js 18+
+ * - JSON 响应自动设置 Content-Type
+ * - Ctrl+C 停止服务器
  * 
  * 📝 练习任务：
- * - 修改响应内容
- * - 添加新的路由
- * - 尝试不同的 HTTP 方法
+ * - 修改欢迎消息内容
+ * - 添加 /about 路由返回项目介绍
+ * - 尝试添加 POST /submit 路由
  * 
  * 🔗 相关文档：
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run src/01-basic/01-hello.ts
+ * 测试：http://localhost:3000
  */
 
 import { Elysia } from 'elysia'

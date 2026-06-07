@@ -3,30 +3,37 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 掌握请求验证（TypeBox）
- * 2. ✅ 理解中间件的工作原理
- * 3. ✅ 实现文件上传功能
- * 4. ✅ 掌握数据库 CRUD 操作
- * 5. ✅ 使用 Prisma ORM
+ * 1. ✅ 实现结构化日志输出
+ * 2. ✅ 区分日志级别 (INFO/WARN/ERROR)
+ * 3. ✅ 记录请求详细信息
+ * 4. ✅ 使用日志中间件
+ * 5. ✅ 日志文件的轮转和清理
  * 
  * ⚠️ 注意事项：
- * - 验证失败会返回 400 状态码
+ * - 默认端口 3018，被占用请修改
+ * - 运行前需要 bun x prisma generate
+ * - 确保数据库连接字符串正确
+ * - 首次运行需要执行迁移
+ * - 限制上传文件大小
+ * - 验证文件类型
+ * - 注意文件存储安全
+ * - 验证失败返回 400 状态码
  * - 中间件按顺序执行
- * - 文件上传注意大小限制
- * - 数据库连接需要正确配置
- * - Prisma 需要先 generate
+ * - 错误处理要完善
  * 
  * 📝 练习任务：
- * - 添加更多验证规则
- * - 实现自定义中间件
- * - 扩展数据库模型
+ * - 运行案例
+ * - 修改代码实验
+ * - 完成扩展功能
  * 
  * 🔗 相关文档：
+ * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
+ * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run src/02-intermediate/08-logging.ts
+ * 测试：http://localhost:3018
  */
 
 import { Elysia, t } from 'elysia'

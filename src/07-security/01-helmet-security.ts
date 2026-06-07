@@ -3,28 +3,29 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 理解 OWASP Top 10
- * 2. ✅ 配置安全响应头
- * 3. ✅ 防止常见攻击
- * 4. ✅ 保护敏感数据
+ * 1. ✅ 理解 OWASP Top 10 安全风险
+ * 2. ✅ 配置 Helmet 安全响应头
+ * 3. ✅ 防止 XSS 跨站脚本攻击
+ * 4. ✅ 防止 CSRF 跨站请求伪造
+ * 5. ✅ 实现内容安全策略 (CSP)
  * 
  * ⚠️ 注意事项：
- * - 生产环境必须配置 HTTPS
- * - 不要硬编码密钥
- * - 定期更新依赖
- * - 记录安全日志
+ * - 默认端口 3000，被占用请修改
+ * - 生产环境必须 HTTPS
+ * - 不要暴露敏感信息
+ * - 定期更新依赖包
  * 
  * 📝 练习任务：
  * - 配置所有安全头
- * - 进行安全检查
+ * - 使用安全扫描工具检查
  * - 阅读 OWASP 文档
  * 
  * 🔗 相关文档：
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run src/07-security/01-helmet-security.ts
+ * 测试：http://localhost:3000
  */
 
 import { Elysia, t } from 'elysia'

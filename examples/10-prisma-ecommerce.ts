@@ -3,26 +3,32 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 学习特定功能点
- * 2. ✅ 理解代码实现细节
- * 3. ✅ 可以组合到项目中
+ * 1. ✅ 学习 Prisma 实战用法
+ * 2. ✅ 理解数据模型设计
+ * 3. ✅ 掌握复杂查询
+ * 4. ✅ 事务处理
  * 
  * ⚠️ 注意事项：
- * - 示例代码可以复制使用
- * - 根据需求调整配置
- * - 参考完整案例学习
+ * - 运行前需要 bun x prisma generate
+ * - 确保数据库连接字符串正确
+ * - 首次运行需要执行迁移
+ * - 示例代码可直接复制
+ * - 根据项目需求调整
+ * - 参考完整案例深入学习
  * 
  * 📝 练习任务：
- * - 运行示例
- * - 修改参数测试
+ * - 运行示例测试效果
+ * - 修改参数观察变化
  * - 集成到自己的项目
  * 
  * 🔗 相关文档：
+ * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
+ * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run examples/10-prisma-ecommerce.ts
+ * 测试：http://localhost:3000
  */
 
 import { PrismaClient } from '@prisma/client'

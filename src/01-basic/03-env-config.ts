@@ -3,29 +3,40 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 创建一个基本的 Elysia 应用
- * 2. ✅ 定义基础路由和处理请求
- * 3. ✅ 启动 HTTP 服务器
- * 4. ✅ 理解请求和响应的数据流
- * 5. ✅ 通过浏览器或工具测试 API
+ * 1. ✅ 理解环境变量的作用
+ * 2. ✅ 使用 process.env 读取配置
+ * 3. ✅ 区分开发/生产环境
+ * 4. ✅ 创建和使用 .env 文件
+ * 5. ✅ 避免硬编码敏感信息
  * 
  * ⚠️ 注意事项：
- * - 确保已安装 Bun v1.0+ 或 Node.js 18+
- * - 端口被占用时修改为其他端口
- * - JSON 响应会自动设置 Content-Type
- * - 使用 Ctrl+C 停止服务器
+ * - 生产环境配置具体域名，不要用 *
+ * - 前后端分离时必须配置
+ * - 携带 Cookie 需要 credentials: true
+ * - JWT_SECRET 必须使用环境变量
+ * - Token 设置合理的过期时间
+ * - 敏感数据不要放在 payload 中
+ * - 需要SQLite数据库
+ * - 确保数据库服务已启动
+ * - 检查连接配置
+ * - 注意 SQL 注入防护
+ * - Bun v1.0+ 或 Node.js 18+
+ * - JSON 响应自动设置 Content-Type
+ * - Ctrl+C 停止服务器
  * 
  * 📝 练习任务：
- * - 修改响应内容
- * - 添加新的路由
- * - 尝试不同的 HTTP 方法
+ * - 添加新的环境变量
+ * - 创建 .env.example 文件
+ * - 实现配置验证
  * 
  * 🔗 相关文档：
+ * - docs/10-CORS_GUIDE.md - CORS 完全指南
+ * - docs/18-SECURITY_GUIDE.md - 安全指南 (JWT)
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run src/01-basic/03-env-config.ts
+ * 测试：http://localhost:3000
  */
 
 import { Elysia, t } from 'elysia'

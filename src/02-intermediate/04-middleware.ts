@@ -3,30 +3,38 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 掌握请求验证（TypeBox）
- * 2. ✅ 理解中间件的工作原理
- * 3. ✅ 实现文件上传功能
- * 4. ✅ 掌握数据库 CRUD 操作
- * 5. ✅ 使用 Prisma ORM
+ * 1. ✅ 理解中间件的工作原理
+ * 2. ✅ 实现请求认证中间件
+ * 3. ✅ 编写日志记录中间件
+ * 4. ✅ 使用 onRequest/onAfterHandle 钩子
+ * 5. ✅ 中间件的执行顺序
  * 
  * ⚠️ 注意事项：
- * - 验证失败会返回 400 状态码
+ * - 默认端口 3003，被占用请修改
+ * - 运行前需要 bun x prisma generate
+ * - 确保数据库连接字符串正确
+ * - 首次运行需要执行迁移
+ * - 生产环境配置具体域名，不要用 *
+ * - 前后端分离时必须配置
+ * - 携带 Cookie 需要 credentials: true
+ * - 验证失败返回 400 状态码
  * - 中间件按顺序执行
- * - 文件上传注意大小限制
- * - 数据库连接需要正确配置
- * - Prisma 需要先 generate
+ * - 错误处理要完善
  * 
  * 📝 练习任务：
- * - 添加更多验证规则
- * - 实现自定义中间件
- * - 扩展数据库模型
+ * - 实现请求时间记录
+ * - 添加用户 ID 验证
+ * - 实现限流中间件
  * 
  * 🔗 相关文档：
+ * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
+ * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
+ * - docs/10-CORS_GUIDE.md - CORS 完全指南
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run src/02-intermediate/04-middleware.ts
+ * 测试：http://localhost:3003
  */
 
 import { Elysia } from 'elysia'

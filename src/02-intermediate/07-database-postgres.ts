@@ -3,30 +3,38 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 掌握请求验证（TypeBox）
- * 2. ✅ 理解中间件的工作原理
- * 3. ✅ 实现文件上传功能
- * 4. ✅ 掌握数据库 CRUD 操作
- * 5. ✅ 使用 Prisma ORM
+ * 1. ✅ 配置 PostgreSQL 数据库连接
+ * 2. ✅ 实现增删改查操作
+ * 3. ✅ 处理连接池配置
+ * 4. ✅ 理解与 SQLite 的区别
+ * 5. ✅ 为生产环境做准备
  * 
  * ⚠️ 注意事项：
- * - 验证失败会返回 400 状态码
+ * - 默认端口 3016，被占用请修改
+ * - 运行前需要 bun x prisma generate
+ * - 确保数据库连接字符串正确
+ * - 首次运行需要执行迁移
+ * - 需要PostgreSQL数据库
+ * - 确保数据库服务已启动
+ * - 检查连接配置
+ * - 注意 SQL 注入防护
+ * - 验证失败返回 400 状态码
  * - 中间件按顺序执行
- * - 文件上传注意大小限制
- * - 数据库连接需要正确配置
- * - Prisma 需要先 generate
+ * - 错误处理要完善
  * 
  * 📝 练习任务：
- * - 添加更多验证规则
- * - 实现自定义中间件
- * - 扩展数据库模型
+ * - 添加新的数据字段
+ * - 实现批量操作
+ * - 添加查询条件过滤
  * 
  * 🔗 相关文档：
+ * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
+ * - docs/11-ELYSIA_PRISMA_INTEGRATION.md - Elysia+Prisma 集成
  * - docs/00-README.md - 学习指南
  * - docs/00-INDEX.md - 文档导航
  * 
- * 运行：bun run <file>
- * 测试：http://localhost:<port>
+ * 运行：bun run src/02-intermediate/07-database-postgres.ts
+ * 测试：http://localhost:3016
  */
 
 import { Elysia, t } from 'elysia'
