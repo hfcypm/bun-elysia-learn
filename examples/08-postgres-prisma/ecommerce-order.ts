@@ -1,15 +1,15 @@
 /**
- * PostgreSQL + Prisma 示例：电商订单系统
+ * postgresql + Prisma 示例：电商订单系统
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 配置 PostgreSQL 环境
- * 2. ✅ 使用 Prisma ORM
+ * 1. ✅ 配置 postgresql 环境
+ * 2. ✅ 使用 Prisma orm
  * 3. ✅ 订单创建流程
  * 4. ✅ 生产环境配置
  * 
  * ⚠️ 注意事项：
- * - 需要运行 PostgreSQL 数据库
+ * - 需要运行 postgresql 数据库
  * - 配置 DATABASE_URL 环境变量
  * - 先执行 prisma migrate
  * - 参考 POSTGRES_PRISMA_GUIDE 文档
@@ -146,7 +146,7 @@ async function removeFromCart(userId: number, productId: number) {
     where: { userId, productId }
   });
 
-  console.log('🗑️  移出购物车：商品 ID', productId);
+  console.log('🗑️  移出购物车：商品 id', productId);
 }
 
 // ==================== 订单创建（事务处理） ====================
@@ -454,7 +454,7 @@ async function cancelOrder(orderId: number) {
 // ==================== 主函数：演示流程 ====================
 
 async function main() {
-  console.log('🚀 PostgreSQL + Prisma 电商订单系统演示\n');
+  console.log('🚀 postgresql + Prisma 电商订单系统演示\n');
 
   // 1. 创建分类
   console.log('1️⃣  创建分类...');

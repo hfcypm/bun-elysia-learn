@@ -27,7 +27,7 @@
 
 ## 6.2 数据模型设计
 
-### 完整 Schema
+### 完整 schema
 
 ```prisma
 // 用户与认证
@@ -243,7 +243,7 @@ async function login(email: string, password: string) {
     throw new Error('密码错误');
   }
   
-  // 生成 JWT Token
+  // 生成 jwt Token
   const token = await generateJWT(user);
   
   return {
@@ -746,10 +746,10 @@ bun x prisma migrate dev --name init_learning_platform
 # 2. 生产环境应用迁移
 bun x prisma migrate deploy
 
-# 3. 生成 Prisma Client
+# 3. 生成 Prisma client
 bun x prisma generate
 
-# 4. 推送 Schema（开发环境）
+# 4. 推送 schema（开发环境）
 bun x prisma db push
 ```
 
@@ -778,8 +778,8 @@ async function main() {
   // 创建测试课程
   const course = await prisma.course.create({
     data: {
-      title: 'TypeScript 入门教程',
-      description: '从零开始学习 TypeScript',
+      title: 'typescript 入门教程',
+      description: '从零开始学习 typescript',
       price: 99.00,
       teacherId: teacher.id
     }
@@ -825,7 +825,7 @@ bun x prisma db seed
 - ✅ 理解了事务和锁的实际应用
 - ✅ 具备了性能优化意识
 
-恭喜你完成 PostgreSQL + Prisma 全套教程！🎉
+恭喜你完成 postgresql + Prisma 全套教程！🎉
 
 ---
 
@@ -833,8 +833,8 @@ bun x prisma db seed
 
 | 阶段 | 主题 | 关键技能 |
 |------|------|----------|
-| 一 | 环境准备 | Schema 定义、迁移 |
-| 二 | CRUD 基础 | 增删改查、条件查询 |
+| 一 | 环境准备 | schema 定义、迁移 |
+| 二 | crud 基础 | 增删改查、条件查询 |
 | 三 | 一对多关联 | include、嵌套查询 |
 | 四 | 多对多关联 | connectOrCreate、中间表 |
 | 五 | 事务与锁 | $transaction、乐观锁 |
@@ -864,5 +864,5 @@ bun x prisma db seed
 ## 🔗 参考资源
 
 - [Prisma 官方文档](https://prisma.io/docs)
-- [PostgreSQL 官方文档](https://postgresql.org/docs)
+- [postgresql 官方文档](https://postgresql.org/docs)
 - [示例代码目录](../../examples/postgres-prisma/)

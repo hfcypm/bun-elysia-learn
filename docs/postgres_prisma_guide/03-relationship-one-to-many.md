@@ -22,7 +22,7 @@
 
 ## 3.2 一对多关系定义
 
-### Schema 定义
+### schema 定义
 
 ```prisma
 model User {
@@ -239,7 +239,7 @@ const post = await prisma.post.findUnique({
 
 ## 3.6 实战示例：博客系统
 
-### 完整 Schema
+### 完整 schema
 
 ```prisma
 model User {
@@ -450,12 +450,12 @@ const user = await prisma.user.update({
 ### 嵌套删除
 
 ```typescript
-// 删除用户时删除其所有文章（需要在 Schema 中配置级联）
+// 删除用户时删除其所有文章（需要在 schema 中配置级联）
 const user = await prisma.user.delete({
   where: { id: 1 }
 });
 
-// Schema 配置：
+// schema 配置：
 // model Post {
 //   author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
 // }
@@ -520,7 +520,7 @@ const user = await prisma.user.findUnique({
 3. 支持父子分类
 4. 查询分类及其文章数量
 
-**Schema 提示：**
+**schema 提示：**
 ```prisma
 model Category {
   id       Int        @id @default(autoincrement())
@@ -547,7 +547,7 @@ model Category {
 3. 统计评论数
 4. 查询文章时包含评论列表
 
-**Schema 提示：**
+**schema 提示：**
 ```prisma
 model Comment {
   id        Int      @id @default(autoincrement())

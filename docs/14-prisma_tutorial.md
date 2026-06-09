@@ -1,4 +1,4 @@
-# Prisma ORM 从入门到精通
+# Prisma orm 从入门到精通
 
 > 一本全面的 Prisma 学习指南，通过实战案例掌握现代数据库开发
 
@@ -12,7 +12,7 @@
 3. [数据模型定义](#03-数据模型定义)
 4. [数据库迁移](#04-数据库迁移)
 
-### 第二部分：CRUD 操作
+### 第二部分：crud 操作
 5. [创建数据](#05-创建数据)
 6. [查询数据](#06-查询数据)
 7. [更新数据](#07-更新数据)
@@ -35,23 +35,23 @@
 
 ### 什么是 Prisma？
 
-Prisma 是新一代的 ORM（对象关系映射）工具，为 Node.js 和 TypeScript 提供类型安全的数据库访问。
+Prisma 是新一代的 orm（对象关系映射）工具，为 node.js 和 typescript 提供类型安全的数据库访问。
 
 **核心优势**:
-- ✅ **类型安全** - 自动生成 TypeScript 类型
-- ✅ **直观语法** - 类似 JavaScript 对象的查询语法
-- ✅ **自动迁移** - Schema 变更自动同步到数据库
+- ✅ **类型安全** - 自动生成 typescript 类型
+- ✅ **直观语法** - 类似 javascript 对象的查询语法
+- ✅ **自动迁移** - schema 变更自动同步到数据库
 - ✅ **可视化界面** - Prisma Studio 可视化数据管理
-- ✅ **多数据库支持** - PostgreSQL, MySQL, SQLite, SQL Server, MongoDB
+- ✅ **多数据库支持** - postgresql, MySQL, sqlite, sql Server, MongoDB
 
 ### 支持的数据库
 
 | 数据库 | 支持版本 |
 |--------|----------|
-| PostgreSQL | 10+ |
+| postgresql | 10+ |
 | MySQL | 5.7+ / 8+ |
-| SQLite | 3.x |
-| SQL Server | 2019+ |
+| sqlite | 3.x |
+| sql Server | 2019+ |
 | MongoDB | 4.4+ |
 
 ### 安装 Prisma
@@ -75,7 +75,7 @@ npx prisma init
 my-prisma-app/
 ├── prisma/
 │   ├── schema.prisma    # 数据模型定义
-│   └── dev.db          # SQLite 数据库文件 (开发用)
+│   └── dev.db          # sqlite 数据库文件 (开发用)
 ├── node_modules/
 ├── package.json
 └── .env                # 环境变量
@@ -84,10 +84,10 @@ my-prisma-app/
 ### .env 配置
 
 ```env
-# SQLite (开发推荐)
+# sqlite (开发推荐)
 DATABASE_URL="file:./dev.db"
 
-# PostgreSQL (生产推荐)
+# postgresql (生产推荐)
 DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
 
 # MySQL
@@ -127,11 +127,11 @@ model User {
 # 创建并应用迁移
 npx prisma migrate dev --name init
 
-# 查看生成的 SQL
+# 查看生成的 sql
 npx prisma migrate dev --create-only
 ```
 
-### 步骤 3: 生成 Prisma Client
+### 步骤 3: 生成 Prisma client
 
 ```bash
 npx prisma generate
@@ -310,7 +310,7 @@ npx prisma migrate dev --name init
 prisma/
 └── migrations/
     └── 20240101120000_init/
-        ├── migration.sql    # 生成的 SQL
+        ├── migration.sql    # 生成的 sql
         └── migration_lock.toml
 ```
 
@@ -414,7 +414,7 @@ const user = await prisma.user.create({
 // 查询所有
 const users = await prisma.user.findMany()
 
-// 查询单个（按 ID）
+// 查询单个（按 id）
 const user = await prisma.user.findUnique({
   where: { id: 1 }
 })
@@ -466,13 +466,13 @@ const users = await prisma.user.findMany({
 // 多条件组合
 const posts = await prisma.post.findMany({
   where: {
-    AND: [
+    and: [
       { published: true },
       { viewCount: { gte: 100 } }
     ],
-    OR: [
-      { title: { contains: 'TypeScript' } },
-      { content: { contains: 'TypeScript' } }
+    or: [
+      { title: { contains: 'typescript' } },
+      { content: { contains: 'typescript' } }
     ]
   }
 })
@@ -1152,9 +1152,9 @@ const order = await prisma.order.findUnique({
 
 完整代码：`src/advanced/bookmark-system.ts`
 
-这是一个完整的 CRUD 系统，包含：
+这是一个完整的 crud 系统，包含：
 - 用户管理
-- 书签 CRUD
+- 书签 crud
 - 收藏夹管理
 - 标签系统
 - 评论功能
@@ -1169,7 +1169,7 @@ const order = await prisma.order.findUnique({
 ```bash
 # 开发
 npx prisma migrate dev              # 创建并应用迁移
-npx prisma generate                 # 生成 Client
+npx prisma generate                 # 生成 client
 npx prisma studio                   # 可视化界面
 
 # 生产

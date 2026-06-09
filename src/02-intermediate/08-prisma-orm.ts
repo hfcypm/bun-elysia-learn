@@ -3,18 +3,18 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 定义 Prisma Schema 数据模型
+ * 1. ✅ 定义 Prisma schema 数据模型
  * 2. ✅ 执行 prisma migrate 创建迁移
  * 3. ✅ 使用 PrismaClient 查询数据
  * 4. ✅ 实现 findMany/findFirst/create/update/delete
- * 5. ✅ 理解 ORM 的优势
+ * 5. ✅ 理解 orm 的优势
  * 
  * ⚠️ 注意事项：
  * - 默认端口 3020
  * - 运行前：bun x prisma generate
  * - 首次运行需要：bun x prisma migrate dev
  * - 确保数据库连接字符串正确
- * - 共21个 API 端点，分步测试
+ * - 共21个 api 端点，分步测试
  * 
  * 📝 练习任务：
  * - 添加新的数据字段
@@ -41,13 +41,13 @@ const prisma = new PrismaClient({
     : ['error']
 })
 
-console.log('💾 Prisma ORM 已初始化')
+console.log('💾 Prisma orm 已初始化')
 
-// ==================== API 定义 ====================
+// ==================== api 定义 ====================
 const app = new Elysia()
   // ===== 首页 =====
   .get('/', () => ({
-    message: 'Prisma ORM 示例',
+    message: 'Prisma orm 示例',
     features: [
       '类型安全的数据库操作',
       '自动模型生成',
@@ -301,7 +301,7 @@ const app = new Elysia()
       }
 
       if (search) {
-        where.OR = [
+        where.or = [
           { title: { contains: search } },
           { content: { contains: search } }
         ]
@@ -836,7 +836,7 @@ const app = new Elysia()
 
   .listen(3020)
 
-console.log('🔷 Prisma ORM 服务运行在 http://localhost:3020')
+console.log('🔷 Prisma orm 服务运行在 http://localhost:3020')
 console.log('📖 测试端点:')
 console.log('   === 用户模块 ===')
 console.log('   GET    /users - 获取所有用户')
@@ -848,7 +848,7 @@ console.log('   DELETE /users/:id - 删除用户')
 console.log('   === 文章模块 ===')
 console.log('   GET    /posts - 获取文章列表 (支持筛选分页)')
 console.log('   GET    /posts?status=published - 已发布文章')
-console.log('   GET    /posts?tag=TypeScript - 按标签筛选')
+console.log('   GET    /posts?tag=typescript - 按标签筛选')
 console.log('   GET    /posts/:id - 文章详情 (含评论)')
 console.log('   POST   /posts - 创建文章')
 console.log('   PUT    /posts/:id - 更新文章')
@@ -869,7 +869,7 @@ console.log('')
 console.log('💡 Prisma 初始化命令:')
 console.log('   bun x prisma init                    # 初始化 Prisma')
 console.log('   bun x prisma migrate dev             # 创建并应用迁移')
-console.log('   bun x prisma generate                # 生成 Prisma Client')
+console.log('   bun x prisma generate                # 生成 Prisma client')
 console.log('   bun x prisma studio                  # 打开 Prisma 可视化界面')
 
 export type PrismaApp = typeof app

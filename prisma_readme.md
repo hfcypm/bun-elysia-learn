@@ -1,4 +1,4 @@
-# Prisma ORM 案例补充说明
+# Prisma orm 案例补充说明
 
 ## 📦 新增文件
 
@@ -7,9 +7,9 @@
 - **端口**: 3020
 - **代码行数**: ~900 行
 
-### 2. Prisma Schema
+### 2. Prisma schema
 - **文件**: `prisma/schema.prisma`
-- **数据库**: SQLite (可切换到 PostgreSQL)
+- **数据库**: sqlite (可切换到 postgresql)
 
 ### 3. 使用指南
 - **文件**: `docs/PRISMA_GUIDE.md`
@@ -32,10 +32,10 @@ bun install prisma @prisma/client
 # 如果还没有 prisma 目录，复制 schema 文件
 cp prisma/schema.prisma prisma/schema.prisma
 
-# 初始化 SQLite 数据库
+# 初始化 sqlite 数据库
 bun x prisma migrate dev --name init
 
-# 生成 Prisma Client
+# 生成 Prisma client
 bun x prisma generate
 ```
 
@@ -49,7 +49,7 @@ bun run src/intermediate/08-prisma-orm.ts
 
 ---
 
-## 📖 API 端点
+## 📖 api 端点
 
 ### 用户模块
 | 方法 | 端点 | 说明 |
@@ -66,7 +66,7 @@ bun run src/intermediate/08-prisma-orm.ts
 |------|------|------|
 | GET | `/posts` | 获取文章列表 (筛选/分页/搜索) |
 | GET | `/posts?status=published` | 已发布文章 |
-| GET | `/posts?tag=TypeScript` | 按标签筛选 |
+| GET | `/posts?tag=typescript` | 按标签筛选 |
 | GET | `/posts/:id` | 文章详情 (含作者/标签/评论) |
 | POST | `/posts` | 创建文章 (带标签关联) |
 | PUT | `/posts/:id` | 更新文章 |
@@ -97,7 +97,7 @@ bun run src/intermediate/08-prisma-orm.ts
 
 ## 💡 Prisma 核心知识点
 
-### 1. Schema 定义
+### 1. schema 定义
 
 ```prisma
 model User {
@@ -116,7 +116,7 @@ model Post {
 }
 ```
 
-### 2. CRUD 操作
+### 2. crud 操作
 
 ```typescript
 // Create
@@ -215,9 +215,9 @@ const groupStats = await prisma.post.groupBy({
 
 ---
 
-## 🎯 与原生 SQL 的对比
+## 🎯 与原生 sql 的对比
 
-### 原生 SQLite 示例
+### 原生 sqlite 示例
 
 ```typescript
 // 查询用户及其文章
@@ -252,10 +252,10 @@ await prisma.post.create({
 
 **Prisma 优势**:
 - ✅ 类型安全 (IntelliSense 支持)
-- ✅ 无需手写 SQL
+- ✅ 无需手写 sql
 - ✅ 自动处理关联
 - ✅ 内置迁移管理
-- ❌ 性能略低于原生 SQL
+- ❌ 性能略低于原生 sql
 - ❌ 学习曲线稍陡
 
 ---
@@ -265,7 +265,7 @@ await prisma.post.create({
 ```bash
 # 开发
 bun x prisma migrate dev              # 创建并应用迁移
-bun x prisma generate                 # 生成 Prisma Client
+bun x prisma generate                 # 生成 Prisma client
 bun x prisma studio                   # 可视化界面
 
 # 生产
@@ -282,14 +282,14 @@ bun x prisma db push                  # 推送 schema 到数据库
 ## 📚 学习资源
 
 1. **官方文档**: https://www.prisma.io/docs
-2. **Schema 参考**: https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference
-3. **Client API**: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference
+2. **schema 参考**: https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference
+3. **client api**: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference
 4. **本项目案例**: `src/intermediate/08-prisma-orm.ts`
 5. **使用指南**: `docs/PRISMA_GUIDE.md`
 
 ---
 
-## 🔧 切换到 PostgreSQL
+## 🔧 切换到 postgresql
 
 1. 修改 `prisma/schema.prisma`:
 ```prisma

@@ -1,4 +1,4 @@
-# Prisma ORM 使用指南
+# Prisma orm 使用指南
 
 ## 快速开始
 
@@ -16,7 +16,7 @@ bun x prisma init
 
 编辑 `prisma/schema.prisma` 文件，设置数据库连接：
 
-**SQLite (开发/测试推荐)**:
+**sqlite (开发/测试推荐)**:
 ```prisma
 datasource db {
   provider = "sqlite"
@@ -24,7 +24,7 @@ datasource db {
 }
 ```
 
-**PostgreSQL (生产推荐)**:
+**postgresql (生产推荐)**:
 ```prisma
 datasource db {
   provider = "postgresql"
@@ -50,7 +50,7 @@ bun x prisma migrate dev --create-only
 bun x prisma migrate deploy
 ```
 
-### 4. 生成 Prisma Client
+### 4. 生成 Prisma client
 
 ```bash
 bun x prisma generate
@@ -64,7 +64,7 @@ bun x prisma generate
 bun run src/intermediate/08-prisma-orm.ts
 ```
 
-## Prisma Client 常用操作
+## Prisma client 常用操作
 
 ### 创建记录
 
@@ -238,13 +238,13 @@ const groupStats = await prisma.post.groupBy({
 ```typescript
 const posts = await prisma.post.findMany({
   where: {
-    AND: [
+    and: [
       { status: 'published' },
       { viewCount: { gte: 100 } }
     ],
-    OR: [
-      { title: { contains: 'TypeScript' } },
-      { content: { contains: 'TypeScript' } }
+    or: [
+      { title: { contains: 'typescript' } },
+      { content: { contains: 'typescript' } }
     ]
   }
 })
@@ -298,7 +298,7 @@ bun x prisma studio
 
 ## 最佳实践
 
-1. **类型安全**: Prisma Client 自动生成 TypeScript 类型
+1. **类型安全**: Prisma client 自动生成 typescript 类型
 2. **连接池**: 生产环境配置合适的连接池大小
 3. **日志**: 开发环境启用查询日志便于调试
 4. **迁移**: 使用版本控制的迁移管理 schema 变更
@@ -312,11 +312,11 @@ bun x prisma studio
 # 1. 修改 schema.prisma
 # 2. 创建迁移
 bun x prisma migrate dev --name add_new_field
-# 3. 重新生成 Client
+# 3. 重新生成 client
 bun x prisma generate
 ```
 
-### Q: SQLite 如何重置数据库？
+### Q: sqlite 如何重置数据库？
 
 ```bash
 # 删除数据库文件
@@ -329,12 +329,12 @@ bun x prisma migrate dev
 ### Q: 如何查看生成的类型？
 
 ```bash
-# 查看生成的 Client 代码
+# 查看生成的 client 代码
 node_modules/.prisma/client/index.d.ts
 ```
 
 ## 参考资料
 
 - [Prisma 官方文档](https://www.prisma.io/docs)
-- [Prisma Schema 参考](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
-- [Prisma Client API](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference)
+- [Prisma schema 参考](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
+- [Prisma client api](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference)

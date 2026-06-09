@@ -3,10 +3,10 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 使用 Prisma ORM
+ * 1. ✅ 使用 Prisma orm
  * 2. ✅ 定义数据模型
- * 3. ✅ Prisma 基础 CRUD
- * 4. ✅ SQLite 数据库操作
+ * 3. ✅ Prisma 基础 crud
+ * 4. ✅ sqlite 数据库操作
  * 
  * ⚠️ 注意事项：
  * - 先复制 schema 文件
@@ -14,9 +14,9 @@
  * - 执行数据库迁移
  * 
  * 📝 练习任务：
- * - Prisma 基础 CRUD
+ * - Prisma 基础 crud
  * - 用户模型操作
- * - SQLite 数据库
+ * - sqlite 数据库
  * 
  * 🔗 相关文档：
  * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
@@ -74,11 +74,11 @@ async function main() {
   const allUsers = await prisma.user.findMany()
   console.log('所有用户:', allUsers)
 
-  // 查询单个用户（按 ID）
+  // 查询单个用户（按 id）
   const userById = await prisma.user.findUnique({
     where: { id: 1 }
   })
-  console.log('按 ID 查询:', userById)
+  console.log('按 id 查询:', userById)
 
   // 查询单个用户（按邮箱）
   const userByEmail = await prisma.user.findFirst({
@@ -103,7 +103,7 @@ async function main() {
       email: true
     }
   })
-  console.log('只查询 ID 和邮箱:', usersWithEmail)
+  console.log('只查询 id 和邮箱:', usersWithEmail)
 
   // 模糊搜索
   const usersWithName = await prisma.user.findMany({
@@ -183,7 +183,7 @@ async function main() {
   await prisma.user.delete({
     where: { id: 3 }
   })
-  console.log('删除了 ID=3 的用户')
+  console.log('删除了 id=3 的用户')
 
   // 批量删除
   const deleteManyResult = await prisma.user.deleteMany({

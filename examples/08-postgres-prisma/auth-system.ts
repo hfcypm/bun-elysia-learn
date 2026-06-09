@@ -1,23 +1,23 @@
 /**
- * PostgreSQL + Prisma 示例：用户认证系统
+ * postgresql + Prisma 示例：用户认证系统
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 配置 PostgreSQL 环境
- * 2. ✅ 使用 Prisma ORM
+ * 1. ✅ 配置 postgresql 环境
+ * 2. ✅ 使用 Prisma orm
  * 3. ✅ 实现完整的用户注册/登录
  * 4. ✅ 生产环境配置
  * 
  * ⚠️ 注意事项：
- * - 需要运行 PostgreSQL 数据库
+ * - 需要运行 postgresql 数据库
  * - 配置 DATABASE_URL 环境变量
  * - 先执行 prisma migrate
  * - 参考 POSTGRES_PRISMA_GUIDE 文档
  * 
  * 📝 练习任务：
  * - 实现完整的用户注册/登录
- * - PostgreSQL + Prisma 操作
- * - JWT Token 生成验证
+ * - postgresql + Prisma 操作
+ * - jwt Token 生成验证
  * 
  * 🔗 相关文档：
  * - docs/POSTGRES_PRISMA_GUIDE/00-README.md - 总索引
@@ -92,7 +92,7 @@ async function loginUser(email: string, password: string) {
       throw new Error('密码错误');
     }
 
-    // 生成 JWT Token
+    // 生成 jwt Token
     const token = await new SignJWT({ userId: user.id, email: user.email })
       .setProtectedHeader({ alg: 'HS256' })
       .setExpirationTime('7d')
@@ -203,7 +203,7 @@ async function resetPassword(adminId: number, targetUserId: number, newPassword:
 
 // ==================== 主函数：演示流程 ====================
 async function main() {
-  console.log('🚀 PostgreSQL + Prisma 认证系统演示\n');
+  console.log('🚀 postgresql + Prisma 认证系统演示\n');
 
   // 1. 注册新用户
   console.log('1️⃣  注册用户...');

@@ -1,15 +1,15 @@
 /**
- * PostgreSQL + Prisma 示例：博客系统
+ * postgresql + Prisma 示例：博客系统
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 配置 PostgreSQL 环境
- * 2. ✅ 使用 Prisma ORM
+ * 1. ✅ 配置 postgresql 环境
+ * 2. ✅ 使用 Prisma orm
  * 3. ✅ 文章/分类/标签管理
  * 4. ✅ 生产环境配置
  * 
  * ⚠️ 注意事项：
- * - 需要运行 PostgreSQL 数据库
+ * - 需要运行 postgresql 数据库
  * - 配置 DATABASE_URL 环境变量
  * - 先执行 prisma migrate
  * - 参考 POSTGRES_PRISMA_GUIDE 文档
@@ -178,7 +178,7 @@ async function getPosts(
   }
 
   if (filters?.search) {
-    where.OR = [
+    where.or = [
       { title: { contains: filters.search } },
       { content: { contains: filters.search } }
     ];
@@ -269,7 +269,7 @@ async function deletePost(id: number) {
     where: { id }
   });
 
-  console.log('🗑️  删除文章 ID:', id);
+  console.log('🗑️  删除文章 id:', id);
 }
 
 // ==================== 评论系统 ====================
@@ -402,7 +402,7 @@ async function getPopularPosts(limit: number = 5) {
 // ==================== 主函数：演示流程 ====================
 
 async function main() {
-  console.log('🚀 PostgreSQL + Prisma 博客系统演示\n');
+  console.log('🚀 postgresql + Prisma 博客系统演示\n');
 
   // 1. 创建分类
   console.log('1️⃣  创建分类...');
@@ -412,7 +412,7 @@ async function main() {
 
   // 2. 创建标签
   console.log('\n2️⃣  创建标签...');
-  await createTags(['TypeScript', 'Prisma', 'PostgreSQL', '博客', '教程']);
+  await createTags(['typescript', 'Prisma', 'postgresql', '博客', '教程']);
 
   // 3. 创建测试用户
   console.log('\n3️⃣  创建用户...');
@@ -432,15 +432,15 @@ async function main() {
     '这是一篇详细的 Prisma 教程，包含所有核心概念...',
     author.id,
     frontend.id,
-    ['TypeScript', 'Prisma', '教程']
+    ['typescript', 'Prisma', '教程']
   );
 
   const post2 = await createPost(
-    'PostgreSQL 性能优化',
-    'PostgreSQL 数据库性能优化技巧大全...',
+    'postgresql 性能优化',
+    'postgresql 数据库性能优化技巧大全...',
     author.id,
     tech.id,
-    ['PostgreSQL', '教程']
+    ['postgresql', '教程']
   );
 
   // 5. 添加评论

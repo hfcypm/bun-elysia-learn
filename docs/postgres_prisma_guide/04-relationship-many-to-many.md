@@ -76,7 +76,7 @@ model PostTag {
 
 ---
 
-## 4.3 隐式多对多 CRUD
+## 4.3 隐式多对多 crud
 
 ### 创建关联
 
@@ -89,7 +89,7 @@ const post = await prisma.post.create({
     tags: {
       connect: [
         { name: 'Prisma' },
-        { name: 'TypeScript' }
+        { name: 'typescript' }
       ]
     }
   },
@@ -104,13 +104,13 @@ const post = await prisma.post.create({
 ```typescript
 const post = await prisma.post.create({
   data: {
-    title: 'PostgreSQL 性能优化',
+    title: 'postgresql 性能优化',
     content: '...',
     tags: {
       connectOrCreate: [
         {
-          where: { name: 'PostgreSQL' },  // 尝试连接
-          create: { name: 'PostgreSQL' }  // 不存在则创建
+          where: { name: 'postgresql' },  // 尝试连接
+          create: { name: 'postgresql' }  // 不存在则创建
         },
         {
           where: { name: '数据库' },
@@ -132,7 +132,7 @@ await prisma.post.update({
     tags: {
       set: [
         { name: 'Prisma' },
-        { name: 'PostgreSQL' }
+        { name: 'postgresql' }
       ]
     }
   }
@@ -189,9 +189,9 @@ const tag = await prisma.tag.findUnique({
 
 ---
 
-## 4.4 显式多对多 CRUD
+## 4.4 显式多对多 crud
 
-### Schema 定义（带额外字段）
+### schema 定义（带额外字段）
 
 ```prisma
 model Post {
@@ -210,7 +210,7 @@ model Tag {
 model PostTag {
   postId    Int
   tagId     Int
-  addedBy   Int      // 添加者的 ID
+  addedBy   Int      // 添加者的 id
   addedAt   DateTime @default(now())  // 添加时间
   
   post      Post @relation(fields: [postId], references: [id], onDelete: Cascade)
@@ -243,7 +243,7 @@ const post = await prisma.post.create({
     postTags: {
       create: [
         { tag: { connectOrCreate: { where: { name: 'Prisma' }, create: { name: 'Prisma' } } } },
-        { tag: { connectOrCreate: { where: { name: 'TypeScript' }, create: { name: 'TypeScript' } } } }
+        { tag: { connectOrCreate: { where: { name: 'typescript' }, create: { name: 'typescript' } } } }
       ]
     }
   },
@@ -261,7 +261,7 @@ const post = await prisma.post.create({
 
 ## 4.5 实战示例：博客标签系统
 
-### 完整 Schema
+### 完整 schema
 
 ```prisma
 model Post {
@@ -311,7 +311,7 @@ enum PostStatus {
 ```typescript
 // 1. 创建标签
 const tags = await Promise.all(
-  ['TypeScript', 'Prisma', 'PostgreSQL', '教程'].map(name =>
+  ['typescript', 'Prisma', 'postgresql', '教程'].map(name =>
     prisma.tag.upsert({
       where: { name },
       update: {},
@@ -365,7 +365,7 @@ const postWithTags = await prisma.post.findUnique({
 });
 
 console.log(postWithTags.tags.map(t => t.tag.name));
-// ['TypeScript', 'Prisma', 'PostgreSQL', '教程']
+// ['typescript', 'Prisma', 'postgresql', '教程']
 
 // 4. 查询某个标签下的所有文章
 const tagWithPosts = await prisma.tag.findUnique({
@@ -449,7 +449,7 @@ const tagStats = await prisma.tag.findMany({
 
 ## 4.6 实战示例：学生选课系统
 
-### Schema 定义
+### schema 定义
 
 ```prisma
 model Student {
@@ -693,7 +693,7 @@ for (const post of posts) {
 3. 中间表包含授权人、授权时间
 4. 查询用户角色和角色用户
 
-**Schema 提示：**
+**schema 提示：**
 ```prisma
 model User {
   id        Int        @id @default(autoincrement())

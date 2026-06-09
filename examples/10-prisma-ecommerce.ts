@@ -3,10 +3,10 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 使用 Prisma ORM
+ * 1. ✅ 使用 Prisma orm
  * 2. ✅ 定义数据模型
  * 3. ✅ 产品/订单/客户
- * 4. ✅ PostgreSQL 数据库操作
+ * 4. ✅ postgresql 数据库操作
  * 
  * ⚠️ 注意事项：
  * - 先复制 schema 文件
@@ -19,9 +19,9 @@
  * - 聚合查询
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/15-PRISMA_LEARNING_PATH.md - 学习路径
- * - docs/16-PRISMA_GUIDE.md - 使用指南
+ * - docs/14-prisma_tutorial.md - Prisma 完整教程
+ * - docs/15-prisma_learning_path.md - 学习路径
+ * - docs/16-prisma_guide.md - 使用指南
  * 
  * 运行：bun run examples/10-prisma-ecommerce.ts
  */
@@ -49,7 +49,7 @@ async function main() {
       { name: 'iPhone 15', description: '苹果手机', price: 7999, stock: 100, categoryId: cat1.id },
       { name: 'MacBook Pro', description: '苹果笔记本', price: 12999, stock: 50, categoryId: cat1.id },
       { name: 'Prisma 实战', description: '技术书籍', price: 89, stock: 200, categoryId: cat2.id },
-      { name: 'TypeScript 指南', description: '技术书籍', price: 79, stock: 150, categoryId: cat2.id },
+      { name: 'typescript 指南', description: '技术书籍', price: 79, stock: 150, categoryId: cat2.id },
       { name: 'T 恤', description: '纯棉 T 恤', price: 99, stock: 500, categoryId: cat3.id }
     ]
   })

@@ -4,11 +4,11 @@
 
 ---
 
-## 1.1 PostgreSQL 简介
+## 1.1 postgresql 简介
 
-### 什么是 PostgreSQL？
+### 什么是 postgresql？
 
-PostgreSQL 是一个强大的开源关系型数据库管理系统，以其稳定性、可靠性和强大的功能著称。
+postgresql 是一个强大的开源关系型数据库管理系统，以其稳定性、可靠性和强大的功能著称。
 
 **核心特点：**
 - 🟢 完全开源免费
@@ -17,9 +17,9 @@ PostgreSQL 是一个强大的开源关系型数据库管理系统，以其稳定
 - 🟢 优秀的并发控制
 - 🟢 丰富的扩展生态
 
-### PostgreSQL vs MySQL
+### postgresql vs MySQL
 
-| 特性 | PostgreSQL | MySQL |
+| 特性 | postgresql | MySQL |
 |------|------------|-------|
 | 事务支持 | 完整 ACID | 完整 ACID |
 | JSON 支持 | 优秀 | 一般 |
@@ -30,27 +30,27 @@ PostgreSQL 是一个强大的开源关系型数据库管理系统，以其稳定
 
 ---
 
-## 1.2 Prisma ORM 简介
+## 1.2 Prisma orm 简介
 
 ### 什么是 Prisma？
 
-Prisma 是一个新一代的 ORM（对象关系映射）工具，让数据库操作变得简单优雅。
+Prisma 是一个新一代的 orm（对象关系映射）工具，让数据库操作变得简单优雅。
 
 **核心优势：**
-- 🟢 类型安全（TypeScript 优先）
+- 🟢 类型安全（typescript 优先）
 - 🟢 直观的数据模型定义
-- 🟢 自动生成的查询 API
+- 🟢 自动生成的查询 api
 - 🟢 内置数据库迁移
 - 🟢 优秀的开发体验
 
 ### Prisma 核心组件
 
 ```
-Prisma Schema (数据模型定义)
+Prisma schema (数据模型定义)
     ↓
 Prisma Migrate (数据库迁移)
     ↓
-Prisma Client (类型安全的查询 API)
+Prisma client (类型安全的查询 api)
     ↓
 Prisma Studio (可视化数据管理)
 ```
@@ -59,7 +59,7 @@ Prisma Studio (可视化数据管理)
 
 ## 1.3 安装与配置
 
-### 步骤 1：安装 PostgreSQL
+### 步骤 1：安装 postgresql
 
 **macOS:**
 ```bash
@@ -84,7 +84,7 @@ sudo systemctl start postgresql
 ### 步骤 2：创建数据库
 
 ```bash
-# 进入 PostgreSQL
+# 进入 postgresql
 psql -U postgres
 
 # 创建数据库
@@ -125,9 +125,9 @@ postgresql://用户名:密码@主机：端口/数据库名？schema=public
 
 ---
 
-## 1.4 Prisma Schema 基础
+## 1.4 Prisma schema 基础
 
-### Schema 文件结构
+### schema 文件结构
 
 ```prisma
 // 1. 数据源配置
@@ -202,7 +202,7 @@ model DataTypeExample {
 ### 创建迁移
 
 ```bash
-# 创建迁移（会生成 SQL 并执行）
+# 创建迁移（会生成 sql 并执行）
 bun x prisma migrate dev --name init_users_table
 
 # 查看迁移历史
@@ -218,19 +218,19 @@ bun x prisma migrate reset
 prisma/
   migrations/
     20240101000000_init_users_table/
-      ├── migration.sql          # 生成的 SQL
+      ├── migration.sql          # 生成的 sql
       └── migration_lock.toml    # 锁定文件
 ```
 
-### 生成的 SQL 示例
+### 生成的 sql 示例
 
 ```sql
 -- CreateTable
 CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
-    "email" TEXT NOT NULL,
+    "id" SERIAL not NULL,
+    "email" TEXT not NULL,
     "name" TEXT,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdAt" TIMESTAMP(3) not NULL DEFAULT CURRENT_TIMESTAMP,
     
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -257,7 +257,7 @@ bun x prisma studio
 - 🟢 直接编辑记录
 - 🟢 创建/删除关联数据
 - 🟢 查看表结构
-- 🟢 执行原始 SQL
+- 🟢 执行原始 sql
 
 ---
 
@@ -334,8 +334,8 @@ model Product {
 
 | 知识点 | 重要程度 | 掌握要求 |
 |--------|----------|----------|
-| PostgreSQL 安装配置 | ⭐⭐⭐ | 熟练 |
-| Prisma Schema 语法 | ⭐⭐⭐⭐⭐ | 精通 |
+| postgresql 安装配置 | ⭐⭐⭐ | 熟练 |
+| Prisma schema 语法 | ⭐⭐⭐⭐⭐ | 精通 |
 | 数据类型选择 | ⭐⭐⭐⭐ | 熟练 |
 | 数据库迁移 | ⭐⭐⭐⭐⭐ | 精通 |
 | Prisma Studio 使用 | ⭐⭐⭐ | 熟悉 |
@@ -343,17 +343,17 @@ model Product {
 ### 下一步
 
 完成本章后，你应该能够：
-- ✅ 独立安装和配置 PostgreSQL
-- ✅ 编写 Prisma Schema 定义数据模型
+- ✅ 独立安装和配置 postgresql
+- ✅ 编写 Prisma schema 定义数据模型
 - ✅ 创建和执行数据库迁移
 - ✅ 使用 Prisma Studio 查看数据
 
-准备好进入**阶段二：CRUD 基础操作**！
+准备好进入**阶段二：crud 基础操作**！
 
 ---
 
 ## 🔗 参考资源
 
-- [PostgreSQL 官方文档](https://postgresql.org/docs)
-- [Prisma Schema 参考](https://prisma.io/docs/reference/api-reference/prisma-schema-reference)
+- [postgresql 官方文档](https://postgresql.org/docs)
+- [Prisma schema 参考](https://prisma.io/docs/reference/api-reference/prisma-schema-reference)
 - [Prisma 数据模型](https://prisma.io/docs/concepts/components/prisma-schema/data-model)

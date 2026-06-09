@@ -1,15 +1,15 @@
 /**
- * PostgreSQL + Prisma 示例：学生课程系统
+ * postgresql + Prisma 示例：学生课程系统
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 配置 PostgreSQL 环境
- * 2. ✅ 使用 Prisma ORM
+ * 1. ✅ 配置 postgresql 环境
+ * 2. ✅ 使用 Prisma orm
  * 3. ✅ 多对多关系
  * 4. ✅ 生产环境配置
  * 
  * ⚠️ 注意事项：
- * - 需要运行 PostgreSQL 数据库
+ * - 需要运行 postgresql 数据库
  * - 配置 DATABASE_URL 环境变量
  * - 先执行 prisma migrate
  * - 参考 POSTGRES_PRISMA_GUIDE 文档
@@ -443,7 +443,7 @@ async function analyzeCourseScores(courseId: number) {
 // ==================== 主函数：演示流程 ====================
 
 async function main() {
-  console.log('🚀 PostgreSQL + Prisma 学生课程系统演示\n');
+  console.log('🚀 postgresql + Prisma 学生课程系统演示\n');
 
   // 1. 创建教师
   console.log('1️⃣  创建教师...');

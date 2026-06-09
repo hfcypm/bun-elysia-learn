@@ -437,7 +437,7 @@ try {
 3. 记录转账流水
 4. 处理并发转账（使用锁）
 
-**Schema 提示：**
+**schema 提示：**
 ```prisma
 model Account {
   id      Int     @id @default(autoincrement())

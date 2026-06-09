@@ -1,6 +1,6 @@
 # Prisma 学习路径指南
 
-> 循序渐进掌握 Prisma ORM 的完整学习路线
+> 循序渐进掌握 Prisma orm 的完整学习路线
 
 ---
 
@@ -15,7 +15,7 @@
 基础篇 (2-3 天)
   ├─ 数据模型定义
   ├─ 数据库迁移
-  └─ CRUD 基础操作
+  └─ crud 基础操作
 
 进阶篇 (3-5 天)
   ├─ 关联关系与查询
@@ -35,13 +35,13 @@
 
 ### 官方文档
 - [Prisma 官方文档](https://www.prisma.io/docs)
-- [Prisma Schema 参考](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
-- [Prisma Client API](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference)
+- [Prisma schema 参考](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
+- [Prisma client api](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference)
 
 ### 本教程资源
 | 文件 | 内容 | 难度 |
 |------|------|------|
-| `docs/PRISMA_TUTORIAL.md` | 完整教程文档 | ⭐⭐⭐ |
+| `docs/14-prisma_tutorial.md` | 完整教程文档 | ⭐⭐⭐ |
 | `examples/prisma-basic-user.ts` | 用户管理案例 | ⭐ |
 | `examples/prisma-blog.ts` | 博客系统案例 | ⭐⭐ |
 | `examples/prisma-ecommerce.ts` | 电商系统案例 | ⭐⭐⭐ |
@@ -68,12 +68,12 @@ npm install prisma @prisma/client
 # 2. 初始化 Prisma
 npx prisma init
 
-# 3. 配置 SQLite
+# 3. 配置 sqlite
 # 编辑 .env 文件，设置 DATABASE_URL="file:./dev.db"
 ```
 
 #### 参考文档
-- `docs/PRISMA_TUTORIAL.md` - 第 01-02 章
+- `docs/14-prisma_tutorial.md` - 第 01-02 章
 
 ---
 
@@ -99,7 +99,7 @@ model User {
 # 创建迁移
 npx prisma migrate dev --name init
 
-# 生成 Client
+# 生成 client
 npx prisma generate
 
 # 打开可视化界面
@@ -107,12 +107,12 @@ npx prisma studio
 ```
 
 #### 参考文档
-- `docs/PRISMA_TUTORIAL.md` - 第 03-04 章
+- `docs/14-prisma_tutorial.md` - 第 03-04 章
 - `prisma/schema-basic.prisma`
 
 ---
 
-### 第 3 天：CRUD 基础操作
+### 第 3 天：crud 基础操作
 
 #### 学习内容
 1. 创建数据
@@ -154,7 +154,7 @@ npx ts-node examples/test-user.ts
 ```
 
 #### 参考文档
-- `docs/PRISMA_TUTORIAL.md` - 第 05-08 章
+- `docs/14-prisma_tutorial.md` - 第 05-08 章
 - `examples/prisma-basic-user.ts`
 
 ---
@@ -200,7 +200,7 @@ model PostTag {
 ```
 
 #### 参考文档
-- `docs/PRISMA_TUTORIAL.md` - 第 09 章
+- `docs/14-prisma_tutorial.md` - 第 09 章
 - `prisma/schema-blog.prisma`
 - `examples/prisma-blog.ts`
 
@@ -236,7 +236,7 @@ await prisma.user.createMany({
 ```
 
 #### 参考文档
-- `docs/PRISMA_TUTORIAL.md` - 第 10-12 章
+- `docs/14-prisma_tutorial.md` - 第 10-12 章
 - `examples/prisma-ecommerce.ts`
 
 ---
@@ -246,7 +246,7 @@ await prisma.user.createMany({
 #### 选择一：博客系统
 完整实现一个博客系统，包括：
 - 用户管理
-- 文章 CRUD
+- 文章 crud
 - 评论系统
 - 标签管理
 
@@ -287,14 +287,14 @@ curl -X POST http://localhost:3021/api/db/seed
 ### 开发命令
 ```bash
 npx prisma migrate dev              # 创建并应用迁移
-npx prisma generate                 # 生成 Prisma Client
+npx prisma generate                 # 生成 Prisma client
 npx prisma studio                   # 可视化界面
 ```
 
 ### 生产部署
 ```bash
 npx prisma migrate deploy           # 应用迁移
-npx prisma generate                 # 生成 Client
+npx prisma generate                 # 生成 client
 ```
 
 ### 调试命令
@@ -333,18 +333,18 @@ npx prisma studio
 ```
 可视化查看和编辑数据，直观理解数据关系。
 
-### 2. 查看生成的 SQL
+### 2. 查看生成的 sql
 ```bash
-# 开发模式会显示执行的 SQL
+# 开发模式会显示执行的 sql
 DATABASE_URL="file:./dev.db" npx prisma migrate dev
 ```
 
-### 3. 使用 TypeScript 获得类型提示
+### 3. 使用 typescript 获得类型提示
 ```typescript
-// 充分利用 TypeScript 的智能提示
+// 充分利用 typescript 的智能提示
 const user = await prisma.user.findFirst({
   where: { 
-    // TypeScript 会提示可用字段
+    // typescript 会提示可用字段
     email: { contains: '@' }
   }
 })
@@ -354,7 +354,7 @@ const user = await prisma.user.findFirst({
 遇到问题先查官方文档，大部分问题都有解答。
 
 ### 5. 從小到大逐步构建
-先实现简单的 CRUD，再添加复杂功能。
+先实现简单的 crud，再添加复杂功能。
 
 ---
 
@@ -368,7 +368,7 @@ const user = await prisma.user.findFirst({
 
 ### 基础篇
 - [ ] 理解各种字段类型
-- [ ] 掌握 CRUD 操作
+- [ ] 掌握 crud 操作
 - [ ] 能够进行条件查询
 - [ ] 能够实现分页和排序
 
@@ -407,12 +407,12 @@ const user = await prisma.user.findFirst({
    - 数据库函数和触发器
 
 4. **扩展生态**
-   - 结合 Next.js
-   - 结合 NestJS
-   - 结合 GraphQL
+   - 结合 next.js
+   - 结合 nestjs
+   - 结合 graphql
 
 ---
 
 **祝你学习愉快！** 🎉
 
-如有问题，欢迎查阅 `docs/PRISMA_TUTORIAL.md` 或官方文档。
+如有问题，欢迎查阅 `docs/14-prisma_tutorial.md` 或官方文档。

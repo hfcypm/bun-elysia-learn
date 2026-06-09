@@ -1,12 +1,12 @@
-# 阶段二：CRUD 基础操作
+# 阶段二：crud 基础操作
 
 > 学习时间：3 小时 | 难度：⭐⭐⭐
 
 ---
 
-## 2.1 Prisma Client 基础
+## 2.1 Prisma client 基础
 
-### 初始化 Prisma Client
+### 初始化 Prisma client
 
 ```typescript
 import { PrismaClient } from '@prisma/client';
@@ -27,13 +27,13 @@ main()
   });
 ```
 
-### Prisma Client API 分类
+### Prisma client api 分类
 
 ```
 prisma.model.create()      // 创建单条记录
 prisma.model.createMany()  // 批量创建
 
-prisma.model.findUnique()  // 通过唯一 ID 查询
+prisma.model.findUnique()  // 通过唯一 id 查询
 prisma.model.findFirst()   // 查询第一条
 prisma.model.findMany()    // 查询多条（列表）
 
@@ -159,7 +159,7 @@ const users = await prisma.user.createMany({
 ### 查询单条记录
 
 ```typescript
-// 通过唯一 ID 查询
+// 通过唯一 id 查询
 const user = await prisma.user.findUnique({
   where: { id: 1 }
 });
@@ -240,39 +240,39 @@ where: {
 ### 逻辑运算符
 
 ```typescript
-// AND（与）- 所有条件都要满足
+// and（与）- 所有条件都要满足
 const users = await prisma.user.findMany({
   where: {
-    AND: [
+    and: [
       { role: 'USER' },
       { isActive: true }
     ]
   }
 });
 
-// OR（或）- 任一条件满足
+// or（或）- 任一条件满足
 const users = await prisma.user.findMany({
   where: {
-    OR: [
+    or: [
       { role: 'ADMIN' },
       { role: 'MODERATOR' }
     ]
   }
 });
 
-// NOT（非）- 条件不满足
+// not（非）- 条件不满足
 const users = await prisma.user.findMany({
   where: {
-    NOT: {
+    not: {
       role: 'BANNED'
     }
   }
 });
 
-// 简写形式（默认 AND）
+// 简写形式（默认 and）
 const users = await prisma.user.findMany({
   where: {
-    role: 'USER',      // 隐式 AND
+    role: 'USER',      // 隐式 and
     isActive: true
   }
 });
@@ -518,7 +518,7 @@ console.log(`删除了 ${result.count} 条记录`);
 ### 级联删除
 
 ```prisma
-// Schema 中定义级联删除
+// schema 中定义级联删除
 model User {
   posts Post[] @relationonDeleteCascade
 }
@@ -605,7 +605,7 @@ const usersByRole = await prisma.user.groupBy({
 
 ---
 
-## 📝 练习 2.1：用户管理 CRUD
+## 📝 练习 2.1：用户管理 crud
 
 **任务：** 实现完整的用户管理功能
 
@@ -646,7 +646,7 @@ await prisma.user.delete({
 
 ---
 
-## 📝 练习 2.2：商品管理 CRUD
+## 📝 练习 2.2：商品管理 crud
 
 **任务：** 实现电商商品管理
 
@@ -691,7 +691,7 @@ await prisma.user.delete({
 ### 下一步
 
 完成本章后，你应该能够：
-- ✅ 独立完成任何单表的 CRUD 操作
+- ✅ 独立完成任何单表的 crud 操作
 - ✅ 使用条件筛选和分页查询
 - ✅ 进行数据统计和聚合
 
@@ -701,6 +701,6 @@ await prisma.user.delete({
 
 ## 🔗 参考资源
 
-- [Prisma CRUD 文档](https://prisma.io/docs/concepts/components/prisma-client/crud)
+- [Prisma crud 文档](https://prisma.io/docs/concepts/components/prisma-client/crud)
 - [Prisma 查询指南](https://prisma.io/docs/concepts/components/prisma-client/filtering-and-sorting)
 - [示例代码 - 用户认证](../../examples/postgres-prisma/auth-system.ts)

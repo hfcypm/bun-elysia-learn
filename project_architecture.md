@@ -107,9 +107,9 @@ bun-elysia-learn/
 │   │
 │   ├── 完整教程
 │   ├── 13-BOOKMARK_SYSTEM_GUIDE.md      # 书签系统实战
-│   ├── 14-PRISMA_TUTORIAL.md            # Prisma 完整教程 (12 章)
-│   ├── 15-PRISMA_LEARNING_PATH.md       # Prisma 学习路径
-│   ├── 16-PRISMA_GUIDE.md               # Prisma 使用指南
+│   ├── 14-prisma_tutorial.md            # Prisma 完整教程 (12 章)
+│   ├── 15-prisma_learning_path.md       # Prisma 学习路径
+│   ├── 16-prisma_guide.md               # Prisma 使用指南
 │   ├── 17-TESTING.md                    # 测试完全指南
 │   ├── 18-SECURITY_GUIDE.md             # OWASP 安全指南
 │   ├── 19-PERFORMANCE.md                # 性能优化指南
@@ -499,9 +499,9 @@ const app = new Elysia()
 | 编号 | 文档 | 说明 | 内容 |
 |------|------|------|------|
 | 13 | 13-BOOKMARY_SYSTEM_GUIDE.md | 书签系统 | 350+ 行 |
-| 14 | 14-PRISMA_TUTORIAL.md | Prisma 教程 | 12 章 |
-| 15 | 15-PRISMA_LEARNING_PATH.md | Prisma 路径 | 7 天计划 |
-| 16 | 16-PRISMA_GUIDE.md | Prisma 指南 | 参考手册 |
+| 14 | 14-prisma_tutorial.md | Prisma 教程 | 12 章 |
+| 15 | 15-prisma_learning_path.md | Prisma 路径 | 7 天计划 |
+| 16 | 16-prisma_guide.md | Prisma 指南 | 参考手册 |
 | 17 | 17-TESTING.md | 测试指南 | 673 行 |
 | 18 | 18-SECURITY_GUIDE.md | 安全指南 | 618 行 |
 | 19 | 19-PERFORMANCE.md | 性能优化 | 497 行 |
@@ -678,7 +678,7 @@ npm run pm2:start
    ↓
 🎓 第 6 步：完整教程
    ↓
-   docs/10-21/ (进阶文档) + docs/POSTGRES_PRISMA_GUIDE/ (PostgreSQL 教程)
+   docs/10-21/ (进阶文档) + docs/postgres_prisma_guide/ (PostgreSQL 教程)
 ```
 
 ---

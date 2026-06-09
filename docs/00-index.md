@@ -10,7 +10,7 @@
 
 | 编号 | 文档 | 说明 | 预估时间 |
 |------|------|------|----------|
-| **00** | [00-README.md](00-README.md) | 📖 学习指南 | 10 分钟 |
+| **00** | [00-readme.md](00-readme.md) | 📖 学习指南 | 10 分钟 |
 | **01** | [01-INSTALLATION.md](01-INSTALLATION.md) | 🔧 安装环境 | 15 分钟 |
 | **02** | [02-STUDY_PLAN_SUMMARY.md](02-STUDY_PLAN_SUMMARY.md) | 📋 6 周方案总览 | 20 分钟 |
 
@@ -41,10 +41,10 @@
 
 | 编号 | 文档 | 说明 | 内容量 |
 |------|------|------|--------|
-| **13** | [13-BOOKMARK_SYSTEM_GUIDE.md](13-BOOKMARK_SYSTEM_GUIDE.md) | 🔖 书签系统实战 | 350+ 行 |
-| **14** | [14-PRISMA_TUTORIAL.md](14-PRISMA_TUTORIAL.md) | 📚 Prisma 完整教程 | 12 章 |
-| **15** | [15-PRISMA_LEARNING_PATH.md](15-PRISMA_LEARNING_PATH.md) | 🗺️ Prisma 学习路径 | 7 天计划 |
-| **16** | [16-PRISMA_GUIDE.md](16-PRISMA_GUIDE.md) | 🔧 Prisma 使用指南 | 参考手册 |
+| **13** | [13-bookmark_system_guide.md](13-bookmark_system_guide.md) | 🔖 书签系统实战 | 350+ 行 |
+| **14** | [14-prisma_tutorial.md](14-prisma_tutorial.md) | 📚 Prisma 完整教程 | 12 章 |
+| **15** | [15-prisma_learning_path.md](15-prisma_learning_path.md) | 🗺️ Prisma 学习路径 | 7 天计划 |
+| **16** | [16-prisma_guide.md](16-prisma_guide.md) | 🔧 Prisma 使用指南 | 参考手册 |
 | **17** | [17-TESTING.md](17-TESTING.md) | 🧪 测试完全指南 | 673 行 |
 | **18** | [18-SECURITY_GUIDE.md](18-SECURITY_GUIDE.md) | 🔐 OWASP 安全指南 | 618 行 |
 | **19** | [19-PERFORMANCE.md](19-PERFORMANCE.md) | ⚡ 性能优化指南 | 497 行 |
@@ -57,7 +57,7 @@
 |------|------|----------|
 | [Postman Collection](elysia-learning.postman_collection.json) | 🧪 API 测试集合 | 接口测试 |
 | [upload-test.html](upload-test.html) | 📤 上传测试页面 | 文件上传测试 |
-| [POSTGRES_PRISMA_GUIDE/](POSTGRES_PRISMA_GUIDE/) | 📚 PostgreSQL + Prisma 教程 | 6 章完整教程 |
+| [postgres_prisma_guide/](postgres_prisma_guide/) | 📚 PostgreSQL + Prisma 教程 | 6 章完整教程 |
 
 ---
 
@@ -66,7 +66,7 @@
 按照以下步骤开始学习：
 
 ```
-Step 1: 阅读 00-README.md  → 了解项目结构
+Step 1: 阅读 00-readme.md  → 了解项目结构
    ↓
 Step 2: 阅读 01-INSTALLATION.md → 配置开发环境
    ↓
@@ -81,7 +81,7 @@ Step 4: 阅读 03-STUDY_PLAN_PART1.md → 开始 Day 1 学习
 
 ### 核心文档 (必读)
 
-**00-README.md** - 学习指南
+**00-readme.md** - 学习指南
 - 项目目录结构
 - 快速开始指南
 - 学习路径说明

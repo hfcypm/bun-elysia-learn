@@ -1,4 +1,4 @@
-# PostgreSQL + Prisma 循序渐进学习指南
+# postgresql + Prisma 循序渐进学习指南
 
 > 🐘 从入门到精通的完整学习路径  
 > 6 个阶段 | 12 个实战案例 | 30+ 道练习 | 预计 15-20 小时
@@ -10,7 +10,7 @@
 ```
 阶段一：环境准备与基础概念 (2 小时)
          ↓
-阶段二：CRUD 基础操作 (3 小时)
+阶段二：crud 基础操作 (3 小时)
          ↓
 阶段三：关联查询 - 一对多 (3 小时)
          ↓
@@ -30,17 +30,17 @@
 ### 阶段一：环境准备与基础概念 ⭐⭐
 
 **学习内容：**
-- PostgreSQL 简介与安装
-- Prisma ORM 基础
-- Schema 定义语法
+- postgresql 简介与安装
+- Prisma orm 基础
+- schema 定义语法
 - 数据库迁移
 - Prisma Studio 使用
 
-**[开始学习 →](./01-GETTING_STARTED.md)**
+**[开始学习 →](./01-getting_started.md)**
 
 ---
 
-### 阶段二：CRUD 基础操作 ⭐⭐⭐
+### 阶段二：crud 基础操作 ⭐⭐⭐
 
 **学习内容：**
 - 创建操作（create/createMany）
@@ -51,7 +51,7 @@
 - 删除操作（delete/deleteMany）
 - 聚合查询（aggregate/groupBy）
 
-**[开始学习 →](./02-CRUD-BASICS.md)**
+**[开始学习 →](./02-crud-BASICS.md)**
 
 ---
 
@@ -65,7 +65,7 @@
 - 反向关联查询
 - 统计关联数量（_count）
 
-**[开始学习 →](./03-RELATIONSHIP-ONE-TO-MANY.md)**
+**[开始学习 →](./03-relationship-one-to-many.md)**
 
 **实战案例：**
 - [博客系统](../../examples/postgres-prisma/blog-system.ts) - 文章/分类/评论
@@ -82,7 +82,7 @@
 - 嵌套创建/更新
 - set/connect/disconnect
 
-**[开始学习 →](./04-RELATIONSHIP-MANY-TO-MANY.md)**
+**[开始学习 →](./04-relationship-many-to-many.md)**
 
 **实战案例：**
 - [博客标签](../../examples/postgres-prisma/blog-system.ts) - 文章标签管理
@@ -100,7 +100,7 @@
 - 错误处理与重试
 - 回滚与撤销
 
-**[开始学习 →](./05-TRANSACTIONS-AND-LOCKS.md)**
+**[开始学习 →](./05-TRANSACTIONS-and-LOCKS.md)**
 
 **实战案例：**
 - [电商订单](../../examples/postgres-prisma/ecommerce-order.ts) - 事务处理/库存扣减
@@ -112,12 +112,12 @@
 
 **学习内容：**
 - 在线学习平台开发
-- 完整 Schema 设计
+- 完整 schema 设计
 - 核心功能实现
 - 性能优化建议
 - 测试与部署
 
-**[开始学习 →](./06-FINAL-PROJECT.md)**
+**[开始学习 →](./06-final-project.md)**
 
 **项目包括：**
 - 用户认证系统
@@ -135,12 +135,12 @@
 
 | 示例 | 文件路径 | 知识点 |
 |------|----------|--------|
-| 用户认证 | `examples/postgres-prisma/auth-system.ts` | 注册/登录/JWT |
+| 用户认证 | `examples/postgres-prisma/auth-system.ts` | 注册/登录/jwt |
 | 博客系统 | `examples/postgres-prisma/blog-system.ts` | 一对多/多对多/分页 |
 | 电商订单 | `examples/postgres-prisma/ecommerce-order.ts` | 事务/锁/复杂关联 |
 | 学生课程 | `examples/postgres-prisma/student-course.ts` | 多对多/统计/GPA |
 
-### Schema 文件
+### schema 文件
 
 | 文件 | 说明 |
 |------|------|
@@ -157,13 +157,13 @@
 完成本教程后，你将能够：
 
 ### 基础能力
-- ✅ 独立安装和配置 PostgreSQL 数据库
-- ✅ 编写 Prisma Schema 定义数据模型
+- ✅ 独立安装和配置 postgresql 数据库
+- ✅ 编写 Prisma schema 定义数据模型
 - ✅ 创建和执行数据库迁移
 - ✅ 使用 Prisma Studio 管理数据
 
 ### 核心技能
-- ✅ 熟练进行 CRUD 操作
+- ✅ 熟练进行 crud 操作
 - ✅ 设计一对多、多对多关系
 - ✅ 编写复杂查询和关联查询
 - ✅ 进行数据统计和聚合
@@ -183,7 +183,7 @@
 本教程采用**循序渐进**的方式组织内容，建议按顺序学习：
 
 ```
-基础概念 → CRUD → 一对多 → 多对多 → 事务 → 实战
+基础概念 → crud → 一对多 → 多对多 → 事务 → 实战
 ```
 
 ### 2. 动手实践
@@ -217,13 +217,13 @@
 ## 📊 知识点地图
 
 ```
-PostgreSQL + Prisma
+postgresql + Prisma
 ├── 基础概念
-│   ├── Schema 定义 ⭐⭐⭐⭐⭐
+│   ├── schema 定义 ⭐⭐⭐⭐⭐
 │   ├── 数据类型 ⭐⭐⭐⭐
 │   └── 数据库迁移 ⭐⭐⭐⭐⭐
 │
-├── CRUD 操作
+├── crud 操作
 │   ├── 创建 (create/createMany) ⭐⭐⭐⭐⭐
 │   ├── 查询 (findUnique/findMany) ⭐⭐⭐⭐⭐
 │   ├── 条件筛选 (where) ⭐⭐⭐⭐⭐
@@ -301,7 +301,7 @@ bun x prisma studio
 ## 我的学习进度
 
 - [x] 阶段一：环境准备与基础概念
-- [ ] 阶段二：CRUD 基础操作
+- [ ] 阶段二：crud 基础操作
 - [ ] 阶段三：关联查询（一对多）
 - [ ] 阶段四：高级关联（多对多）
 - [ ] 阶段五：事务与锁机制
@@ -312,18 +312,18 @@ bun x prisma studio
 
 ## ❓ 常见问题
 
-### Q1: 必须使用 PostgreSQL 吗？
+### Q1: 必须使用 postgresql 吗？
 
-**A:** 不是必须，但建议使用 PostgreSQL。Prisma 也支持 MySQL、SQL Server、SQLite、MongoDB 等数据库。
+**A:** 不是必须，但建议使用 postgresql。Prisma 也支持 MySQL、sql Server、sqlite、MongoDB 等数据库。
 
-### Q2: 需要 TypeScript 基础吗？
+### Q2: 需要 typescript 基础吗？
 
-**A:** 建议有基本的 TypeScript 知识，但即使只用 JavaScript 也可以学习。
+**A:** 建议有基本的 typescript 知识，但即使只用 javascript 也可以学习。
 
 ### Q3: 学完后能做什么？
 
 **A:** 学完后你将能够：
-- 独立开发后端 API 的数据库部分
+- 独立开发后端 api 的数据库部分
 - 设计合理的数据库模型
 - 处理复杂的业务逻辑
 - 为全栈开发打下基础
@@ -343,8 +343,8 @@ bun x prisma studio
 ### 官方文档
 
 - [Prisma 官方文档](https://prisma.io/docs)
-- [PostgreSQL 官方文档](https://postgresql.org/docs)
-- [Prisma Schema 参考](https://prisma.io/docs/reference/api-reference/prisma-schema-reference)
+- [postgresql 官方文档](https://postgresql.org/docs)
+- [Prisma schema 参考](https://prisma.io/docs/reference/api-reference/prisma-schema-reference)
 
 ### 示例代码
 
@@ -356,7 +356,7 @@ bun x prisma studio
 ### 社区资源
 
 - [Prisma GitHub](https://github.com/prisma/prisma)
-- [PostgreSQL 中文社区](https://postgres.cn)
+- [postgresql 中文社区](https://postgres.cn)
 - [Prisma Discord](https://discord.gg/prisma)
 
 ---
@@ -365,7 +365,7 @@ bun x prisma studio
 
 完成本教程后，你将获得：
 
-- ✅ 完整的 PostgreSQL + Prisma 知识体系
+- ✅ 完整的 postgresql + Prisma 知识体系
 - ✅ 4 个完整的项目实战经验
 - ✅ 30+ 道练习题的实战训练
 - ✅ 继续学习高级特性的基础

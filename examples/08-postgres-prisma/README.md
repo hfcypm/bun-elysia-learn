@@ -1,6 +1,6 @@
-# PostgreSQL + Prisma 经典示例指南 🐘🦊
+# postgresql + Prisma 经典示例指南 🐘🦊
 
-本目录包含 4 个经典的 PostgreSQL + Prisma 组合示例，覆盖真实业务场景。
+本目录包含 4 个经典的 postgresql + Prisma 组合示例，覆盖真实业务场景。
 
 ---
 
@@ -8,7 +8,7 @@
 
 | 示例 | 文件 | 说明 | 难度 |
 |------|------|------|------|
-| 用户认证系统 | `auth-system.ts` | 注册/登录/JWT/密码重置 | ⭐⭐⭐ |
+| 用户认证系统 | `auth-system.ts` | 注册/登录/jwt/密码重置 | ⭐⭐⭐ |
 | 博客系统 | `blog-system.ts` | 文章/分类/标签/评论/分页 | ⭐⭐⭐⭐ |
 | 电商订单 | `ecommerce-order.ts` | 商品/购物车/订单/事务处理 | ⭐⭐⭐⭐⭐ |
 | 学生课程 | `student-course.ts` | 选课/成绩/GPA 计算 | ⭐⭐⭐⭐ |
@@ -74,7 +74,7 @@ bun run examples/postgres-prisma/student-course.ts
 
 ```
 ✅ 用户注册（密码加密）
-✅ 用户登录（密码验证 + JWT）
+✅ 用户登录（密码验证 + jwt）
 ✅ 用户信息更新
 ✅ 密码修改
 ✅ 管理员密码重置
@@ -86,7 +86,7 @@ bun run examples/postgres-prisma/student-course.ts
 // 密码加密
 const hashedPassword = await bcrypt.hash(password, 12);
 
-// JWT Token 生成
+// jwt Token 生成
 const token = await new SignJWT({ userId: user.id })
   .setProtectedHeader({ alg: 'HS256' })
   .setExpirationTime('7d')
@@ -106,7 +106,7 @@ const isValid = await bcrypt.compare(password, hashedPassword);
 **核心功能：**
 
 ```
-✅ 文章 CRUD
+✅ 文章 crud
 ✅ 分类管理（树形结构）
 ✅ 标签管理（多对多）
 ✅ 评论系统（嵌套回复）
@@ -414,9 +414,9 @@ await prisma.user.updateMany({
 ## 🔗 相关资源
 
 - [Prisma 官方文档](https://prisma.io/docs)
-- [Prisma Schema 参考](https://prisma.io/docs/reference/api-reference/prisma-schema-reference)
-- [Prisma Client API](https://prisma.io/docs/reference/api-reference/prisma-client-reference)
-- [PostgreSQL 文档](https://postgresql.org/docs)
+- [Prisma schema 参考](https://prisma.io/docs/reference/api-reference/prisma-schema-reference)
+- [Prisma client api](https://prisma.io/docs/reference/api-reference/prisma-client-reference)
+- [postgresql 文档](https://postgresql.org/docs)
 
 ---
 

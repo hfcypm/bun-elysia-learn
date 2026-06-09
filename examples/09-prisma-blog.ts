@@ -3,10 +3,10 @@
  * 
  * 📖 学习目标：
  * 完成本案例后，你应该能够：
- * 1. ✅ 使用 Prisma ORM
+ * 1. ✅ 使用 Prisma orm
  * 2. ✅ 定义数据模型
  * 3. ✅ 作者/文章/标签关系
- * 4. ✅ SQLite 数据库操作
+ * 4. ✅ sqlite 数据库操作
  * 
  * ⚠️ 注意事项：
  * - 先复制 schema 文件
@@ -19,9 +19,9 @@
  * - 复杂查询
  * 
  * 🔗 相关文档：
- * - docs/14-PRISMA_TUTORIAL.md - Prisma 完整教程
- * - docs/15-PRISMA_LEARNING_PATH.md - 学习路径
- * - docs/16-PRISMA_GUIDE.md - 使用指南
+ * - docs/14-prisma_tutorial.md - Prisma 完整教程
+ * - docs/15-prisma_learning_path.md - 学习路径
+ * - docs/16-prisma_guide.md - 使用指南
  * 
  * 运行：bun run examples/09-prisma-blog.ts
  */
@@ -54,7 +54,7 @@ async function main() {
   console.log('创建作者 2:', author2)
 
   // 创建标签
-  const tag1 = await prisma.tag.create({ data: { name: 'TypeScript' } })
+  const tag1 = await prisma.tag.create({ data: { name: 'typescript' } })
   const tag2 = await prisma.tag.create({ data: { name: 'Prisma' } })
   const tag3 = await prisma.tag.create({ data: { name: '教程' } })
   console.log('创建标签:', [tag1, tag2, tag3], '\n')
@@ -66,7 +66,7 @@ async function main() {
   const post1 = await prisma.post.create({
     data: {
       title: 'Prisma 入门教程',
-      content: 'Prisma 是新一代 ORM...',
+      content: 'Prisma 是新一代 orm...',
       published: true,
       authorId: author1.id,
       tags: {
@@ -86,8 +86,8 @@ async function main() {
 
   const post2 = await prisma.post.create({
     data: {
-      title: 'TypeScript 高级技巧',
-      content: '深入理解 TypeScript...',
+      title: 'typescript 高级技巧',
+      content: '深入理解 typescript...',
       published: true,
       authorId: author1.id,
       tags: {
@@ -268,7 +268,7 @@ async function main() {
       tags: {
         some: {
           tag: {
-            name: 'TypeScript'
+            name: 'typescript'
           }
         }
       }
@@ -278,7 +278,7 @@ async function main() {
       tags: { include: { tag: true } }
     }
   })
-  console.log('包含 TypeScript 标签的文章:', postsWithTag, '\n')
+  console.log('包含 typescript 标签的文章:', postsWithTag, '\n')
 
   // ==================== 8. 删除操作 ====================
   console.log('=== 8. 删除操作 ===')
