@@ -1,49 +1,36 @@
 {
-  "name": "elysia-learning",
+  "name": "file-upload-monorepo",
   "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev:basic": "npx tsx watch src/basic/01-hello.ts",
-    "dev:example1": "npx tsx watch src/basic/02-http-methods.ts",
-    "dev:example2": "npx tsx watch src/intermediate/03-validation.ts",
-    "dev:example3": "npx tsx watch src/intermediate/04-middleware.ts",
-    "dev:example4": "npx tsx watch src/intermediate/05-file-upload.ts",
-    "dev:example5": "npx tsx watch src/advanced/05-blog-api.ts",
-    "dev:example6": "npx tsx watch src/advanced/06-auth.ts",
-    "dev:example7": "npx tsx watch src/advanced/07-websocket.ts",
-    "dev:bookmark": "npx tsx watch src/advanced/bookmark-system.ts",
-    "dev:prisma:user": "npx tsx watch examples/prisma-basic-user.ts",
-    "dev:prisma:blog": "npx tsx watch examples/prisma-blog.ts",
-    "dev:prisma:ecommerce": "npx tsx watch examples/prisma-ecommerce.ts",
-    "start": "npx tsx src/basic/01-hello.ts",
-    "start:prod": "NODE_ENV=production bun run src/advanced/bookmark-system.ts",
-    "test": "bun test",
-    "test:watch": "bun test --watch",
-    "test:coverage": "bun test --coverage",
-    "docker:build": "docker build -f src/deployment/Dockerfile -t elysia-app .",
-    "docker:run": "docker run -p 3000:3000 --name elysia-app elysia-app",
-    "docker:compose": "docker-compose -f src/deployment/docker-compose.yml up -d",
-    "docker:down": "docker-compose -f src/deployment/docker-compose.yml down",
-    "pm2:start": "pm2 start src/deployment/pm2.config.js",
-    "pm2:stop": "pm2 stop all",
-    "pm2:restart": "pm2 restart all",
-    "pm2:logs": "pm2 logs",
-    "lint": "eslint src/**/*.ts",
-    "typecheck": "tsc --noEmit",
-    "install:bun": "echo 'Installing with Bun...' && bun install",
-    "install:npm": "echo 'Installing with npm...' && npm install"
-  },
-  "dependencies": {
-    "@elysiajs/cors": "^1.1.1",
-    "@elysiajs/jwt": "^1.1.1",
-    "@elysiajs/static": "^1.1.1",
-    "@elysiajs/swagger": "^1.1.5",
-    "dotenv": "^17.4.2",
-    "elysia": "^1.1.23"
+    "dev": "bun run --filter '*' dev",
+    "dev:backend": "bun run --filter backend dev",
+    "dev:frontend": "bun run --filter frontend dev",
+    "build": "bun run --filter '*' build",
+    "build:backend": "bun run --filter backend build",
+    "build:frontend": "bun run --filter frontend build",
+    "start": "bun run --filter backend start",
+    "preview": "bun run --filter frontend preview",
+    "test": "bun run --filter '*' test",
+    "lint": "bun run --filter '*' lint",
+    "typecheck": "bun run --filter '*' typecheck",
+    "clean": "rm -rf apps/*/dist packages/*/dist",
+    "install:all": "bun install"
   },
   "devDependencies": {
     "@types/bun": "^1.2.3",
-    "typescript": "^5.7.3",
-    "tsx": "^4.19.3"
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "elysia": "^1.4.28",
+    "@elysiajs/cors": "^1.4.2",
+    "@elysiajs/jwt": "^1.4.2",
+    "@elysiajs/static": "^1.4.10",
+    "@elysiajs/swagger": "^1.3.1",
+    "dotenv": "^17.4.2"
   }
 }

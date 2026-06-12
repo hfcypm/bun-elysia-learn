@@ -55,7 +55,7 @@ const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB
 const MAX_BATCH_SIZE = 10 // 最多批量上传 10 张
 
 // 上传目录配置 - 根目录下的 uploads 文件夹
-const UPLOAD_DIR = join(process.cwd(), 'uploads')
+const UPLOAD_DIR = join(process.cwd(), '..', '..', 'uploads')
 
 // 确保上传目录存在
 if (!existsSync(UPLOAD_DIR)) {
@@ -80,6 +80,7 @@ const app = new Elysia()
     // 返回文件
     return Bun.file(filePath)
   })
+
   // ========== 单文件上传 ==========
   .post('/upload', async ({ body, set }) => {
     // 检查是否有文件
@@ -526,8 +527,8 @@ function formatFileSize(bytes: number): string {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
 }
 
-app.listen(3007, () => {
-  console.log('🚀 图片上传服务运行在 http://localhost:3007')
+app.listen(3001, () => {
+  console.log('🚀 图片上传服务运行在 http://localhost:3001')
   console.log(`📁 上传目录：${UPLOAD_DIR}`)
   console.log('\n📷 上传接口:')
   console.log('   POST /upload           单张图片上传')
@@ -542,18 +543,20 @@ app.listen(3007, () => {
   console.log('   GET /static/uploads/:filename - 访问上传的文件')
   console.log('\n📊 统计信息:')
   console.log('   GET /stats             查看上传统计')
+  console.log('\n📚 API 文档:')
+  console.log('   GET /swagger           Swagger UI')
   console.log('\n💡 测试方法:')
   console.log('   使用 Postman 或 curl 测试上传')
-  console.log('   或使用以下 HTML 表单测试:')
+  console.log('   或使用前端界面：http://localhost:3000')
   console.log(`
 <!-- 单张上传表单 -->
-<form action="http://localhost:3007/upload" method="POST" enctype="multipart/form-data">
+<form action="http://localhost:3001/upload" method="POST" enctype="multipart/form-data">
   <input type="file" name="image" accept="image/*" required>
   <button type="submit">上传</button>
 </form>
 
 <!-- 批量上传表单 -->
-<form action="http://localhost:3007/upload/batch" method="POST" enctype="multipart/form-data">
+<form action="http://localhost:3001/upload/batch" method="POST" enctype="multipart/form-data">
   <input type="file" name="images" accept="image/*" multiple required>
   <button type="submit">批量上传</button>
 </form>
