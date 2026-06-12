@@ -13,12 +13,20 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': {
+      // 代理所有 API 请求到后端
+      '/upload': {
         target: 'http://localhost:3001',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      '/files': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
       },
       '/static': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+      '/stats': {
         target: 'http://localhost:3001',
         changeOrigin: true,
       },
